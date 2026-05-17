@@ -55,6 +55,12 @@
       "type": "file"
     },
     {
+      "path": "CLAUDE.md",
+      "accessCount": 3,
+      "lastAccessed": 1779025437784,
+      "type": "file"
+    },
+    {
       "path": "spring/spring-boot/pom.xml",
       "accessCount": 2,
       "lastAccessed": 1779001732733,
@@ -250,12 +256,6 @@
       "path": "messaging/kafka/pom.xml",
       "accessCount": 2,
       "lastAccessed": 1779025354324,
-      "type": "file"
-    },
-    {
-      "path": "CLAUDE.md",
-      "accessCount": 1,
-      "lastAccessed": 1779001294801,
       "type": "file"
     },
     {
