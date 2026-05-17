@@ -13,6 +13,10 @@ import org.springframework.stereotype.Service;
 import java.util.concurrent.TimeUnit;
 import java.util.function.Supplier;
 
+/**
+ * Backend B 业务服务实现（manfred resilience4j 包），演示编程式 CircuitBreaker 装饰及 RxJava 流的熔断保护。
+ * 通过 CircuitBreakerRegistry 动态获取熔断器，并结合 Vavr Try 实现链式故障恢复。
+ */
 @Service(value = "businessBService")
 public class BusinessBService implements BusinessService  {
 

@@ -7,7 +7,11 @@ import org.jeasy.rules.api.RulesEngine;
 import org.jeasy.rules.core.DefaultRulesEngine;
 import org.jeasy.rules.core.RuleBuilder;
 
-public class Boot {
+/**
+ * Easy Rules 规则引擎演示，展示通过 RuleBuilder 编程式定义规则和基于注解定义规则两种方式。
+ * 演示 RulesEngine 根据 Facts 驱动规则匹配与动作执行的核心机制。
+ */
+public class EasyRuleDemo {
     public static void main(String[] args) {
 
         // define rules

@@ -3,9 +3,10 @@ package spring;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+
 /**
- * @author manfred
- * @since 2019-11-11 下午3:46
+ * Apollo 与 Spring XML 配置集成演示，通过 ClassPathXmlApplicationContext 加载 XML 配置文件并获取 Bean。
+ * 展示 Apollo 配置项在传统 Spring XML 方式下的注入效果。
  */
 public class TestXmlBean {
 

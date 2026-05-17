@@ -10,6 +10,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 
+/**
+ * 仪表盘 Spring MVC 控制器，返回 ModelAndView 并传入用户列表数据，渲染 JSP 视图。
+ * 演示 Spring MVC 传统 Controller 返回 ModelAndView 与 JSP 视图解析器协作的基础用法。
+ */
 @Controller
 public class DashboardController {
 

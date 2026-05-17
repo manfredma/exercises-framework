@@ -12,7 +12,11 @@ import org.springframework.batch.core.repository.JobRestartException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-public class Main {
+/**
+ * Spring Batch 入门演示，通过 JobLauncher 手动触发批处理 Job 并观察执行结果。
+ * 演示如何基于 AnnotationConfigApplicationContext 启动 Spring Batch 任务。
+ */
+public class SpringBatchDemo {
     public static void main(String[] args) {
 
         ApplicationContext context =

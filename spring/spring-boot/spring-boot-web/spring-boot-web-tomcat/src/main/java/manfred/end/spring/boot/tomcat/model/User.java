@@ -3,6 +3,10 @@ package manfred.end.spring.boot.tomcat.model;
 import javax.validation.constraints.NotNull;
 import manfred.end.spring.boot.tomcat.constraint.LengthConstraint;
 
+/**
+ * 用户模型类（Web Tomcat 模块），包含 email、name、address 字段。
+ * email 字段使用自定义 @LengthConstraint 和 @NotNull 注解，演示 Bean Validation 在请求体中的应用。
+ */
 public class User {
 
     @LengthConstraint(min = 12, max = 15)

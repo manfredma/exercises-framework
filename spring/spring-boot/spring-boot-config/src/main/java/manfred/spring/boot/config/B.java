@@ -4,9 +4,10 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Component;
 
+
 /**
- * @author manfred
- * @since 2019-12-11 下午4:59
+ * Spring Boot 配置属性绑定演示类 B，结合 @Configuration 和 @ConfigurationProperties 绑定 "b" 前缀属性。
+ * 演示将配置类同时作为 Spring 配置来源与属性持有者的使用方式。
  */
 @ConfigurationProperties(prefix = "b")
 @Configuration

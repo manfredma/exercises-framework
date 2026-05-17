@@ -7,6 +7,10 @@ import org.springframework.stereotype.Service;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.concurrent.TimeUnit;
 
+/**
+ * 问候服务实现，通过随机延迟模拟慢调用，演示 Hystrix 超时和熔断阈值的触发条件。
+ * 配置 circuitBreaker.requestVolumeThreshold 和 execution.isolation.thread.timeoutInMilliseconds 参数。
+ */
 @Service
 public class HelloServiceImpl implements HelloService {
 

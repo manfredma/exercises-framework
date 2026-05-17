@@ -6,9 +6,10 @@ import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
+
 /**
- * @author manfred
- * @since 2019-11-11 下午4:29
+ * Apollo 配置中心与 Spring Boot 集成演示 Bean，通过 @Value 注入 Apollo 中的配置项。
+ * 实现 InitializingBean 以在初始化后打印配置值，验证动态配置是否生效。
  */
 @Component
 public class TestSpringBootConfigBean implements InitializingBean {

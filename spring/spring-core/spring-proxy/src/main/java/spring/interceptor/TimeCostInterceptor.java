@@ -3,6 +3,10 @@ package spring.interceptor;
 import org.aopalliance.intercept.MethodInterceptor;
 import org.aopalliance.intercept.MethodInvocation;
 
+/**
+ * 方法耗时拦截器，实现 AOP Alliance MethodInterceptor 接口，统计被代理方法的执行时间。
+ * 演示通过 Spring AOP 拦截器链在不修改目标代码的前提下注入性能监控逻辑。
+ */
 public class TimeCostInterceptor implements MethodInterceptor {
 
     @Override

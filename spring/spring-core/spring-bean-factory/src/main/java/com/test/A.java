@@ -1,5 +1,9 @@
 package com.test;
 
+/**
+ * Spring Bean 循环依赖演示类 A，持有对 B 的引用并在构造和 setter 中打印调用栈。
+ * 演示 Spring 三级缓存如何解决 A、B 互相依赖的循环注入问题。
+ */
 public class A {
 
     private B b;

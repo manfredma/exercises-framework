@@ -13,7 +13,7 @@ import com.google.inject.Injector;
  * Injector接口作用是创建对象和维护对象的生命周期.
  * Guice类是创建Injector和Modules的联系.
  */
-public class MainTest {
+public class GuiceInjectionDemo {
 
     public static void main(String[] args) {
         Injector injector = Guice.createInjector(new MyModule());

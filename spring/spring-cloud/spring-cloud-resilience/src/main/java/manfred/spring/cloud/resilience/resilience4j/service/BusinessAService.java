@@ -5,6 +5,10 @@ import manfred.spring.cloud.resilience.resilience4j.connnector.Connector;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
+/**
+ * Backend A 业务服务实现（manfred resilience4j 包），演示注解式 CircuitBreaker 的透明集成。
+ * 通过 Vavr Try 实现函数式故障恢复，展示不依赖 Spring AOP 的降级处理方式。
+ */
 @Service(value = "businessAService")
 public class BusinessAService implements BusinessService {
 

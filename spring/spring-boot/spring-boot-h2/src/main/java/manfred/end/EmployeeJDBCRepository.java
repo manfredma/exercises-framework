@@ -11,6 +11,10 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
+/**
+ * 员工 JDBC 数据访问层，使用 JdbcTemplate 实现增删改查及批量插入操作。
+ * 演示 Spring JdbcTemplate 的参数化查询、RowMapper、BeanPropertyRowMapper 等核心用法。
+ */
 @Repository
 public class EmployeeJDBCRepository {
     @Resource

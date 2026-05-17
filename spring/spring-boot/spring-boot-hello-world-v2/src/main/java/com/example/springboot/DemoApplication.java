@@ -8,6 +8,10 @@ import org.springframework.context.annotation.Bean;
 
 import java.util.Arrays;
 
+/**
+ * Spring Boot Hello World v2 应用启动类，演示通过内联 @Bean CommandLineRunner 枚举容器中所有 Bean。
+ * 展示与 CustomerConfig 中外部 @Bean 声明的对比，验证同名 Bean 的优先级规则。
+ */
 @SpringBootApplication
 public class DemoApplication {
 

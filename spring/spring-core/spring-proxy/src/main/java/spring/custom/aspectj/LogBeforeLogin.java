@@ -7,6 +7,10 @@ import org.aspectj.lang.annotation.Pointcut;
 
 import javax.annotation.Resource;
 
+/**
+ * 登录前置日志切面，使用 @Aspect 和 @Before 注解在 @UseAop 标注的方法执行前织入日志逻辑。
+ * 演示 Spring AOP 自定义注解驱动切点的定义方式及 JoinPoint 参数的使用。
+ */
 @Aspect
 public class LogBeforeLogin {
 

@@ -6,6 +6,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+/**
+ * Backend A 的 REST 控制器（manfred resilience4j 包），提供失败、成功、忽略异常及带恢复的端点。
+ * 演示注解式 CircuitBreaker 与 Vavr Try 函数式恢复在 Web 层的集成。
+ */
 @RestController
 @RequestMapping(value = "/backendA")
 public class BackendAController {

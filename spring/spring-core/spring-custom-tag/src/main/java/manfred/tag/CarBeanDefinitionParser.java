@@ -6,6 +6,10 @@ import org.springframework.beans.factory.xml.ParserContext;
 import org.springframework.util.StringUtils;
 import org.w3c.dom.Element;
 
+/**
+ * Car Bean 定义解析器，继承 AbstractSimpleBeanDefinitionParser 实现自定义 XML 标签的属性解析。
+ * 演示如何将 XML 元素属性（brand、color、price、maxSpeed）映射为 BeanDefinition 属性值。
+ */
 public class CarBeanDefinitionParser extends AbstractSimpleBeanDefinitionParser {
 
     @Override

@@ -2,6 +2,10 @@ package hard.coded.proxy;
 
 import dao.IUserDao;
 
+/**
+ * 静态代理实现类，手动包装 IUserDao 目标对象并在方法调用前后添加事务逻辑。
+ * 演示静态代理模式的缺点：每个目标类需要单独编写对应的代理类，代码冗余。
+ */
 public class UserDaoProxy implements IUserDao {
     /**
      * 接收保存目标对象

@@ -11,8 +11,10 @@ import java.sql.Statement;
 import java.util.HashMap;
 import java.util.Map;
 
+
 /**
- * @author manfred
+ * 坏账数据管理 REST 控制器，通过原生 JDBC 对坏账分表（baddebt_N）执行创建、更新和建表操作。
+ * 演示在 Spring Boot 中直接使用 JDBC API 操作 MySQL 数据库的基础用法。
  */
 @RestController
 @RequestMapping("/baddebt")

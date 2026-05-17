@@ -10,6 +10,10 @@ import reactor.core.publisher.Mono;
 
 import java.util.concurrent.CompletableFuture;
 
+/**
+ * Backend A 的 REST 控制器，演示多种调用场景下 Resilience4j 弹性能力的使用。
+ * 提供同步、Mono、Flux、CompletableFuture 等多种调用方式的成功/失败/降级端点。
+ */
 @RestController
 @RequestMapping(value = "/backendA")
 public class BackendAController {

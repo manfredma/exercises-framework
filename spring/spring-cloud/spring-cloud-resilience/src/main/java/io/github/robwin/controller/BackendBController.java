@@ -10,6 +10,10 @@ import reactor.core.publisher.Mono;
 
 import java.util.concurrent.CompletableFuture;
 
+/**
+ * Backend B 的 REST 控制器，演示基于 Retry 和 RateLimiter 注解的弹性调用端点。
+ * 支持同步、响应式（Mono/Flux）及 CompletableFuture 等多种调用方式。
+ */
 @RestController
 @RequestMapping(value = "/backendB")
 public class BackendBController {

@@ -13,6 +13,10 @@ import static org.springframework.web.reactive.function.server.RequestPredicates
 import static org.springframework.web.reactive.function.server.RouterFunctions.route;
 import static org.springframework.web.reactive.function.server.ServerResponse.permanentRedirect;
 
+/**
+ * Resilience4j 示例应用启动类，基于 Spring Boot WebFlux。
+ * 演示熔断器、限流器、舱壁等弹性模式的集成配置，根路径重定向到 Actuator 端点。
+ */
 @SpringBootApplication
 public class Application {
 

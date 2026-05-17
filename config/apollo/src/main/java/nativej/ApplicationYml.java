@@ -3,9 +3,10 @@ package nativej;
 import com.ctrip.framework.apollo.Config;
 import com.ctrip.framework.apollo.ConfigService;
 
+
 /**
- * @author manfred
- * @since 2019-11-11 下午3:34
+ * Apollo 原生 Java API 读取自定义命名空间配置的演示，展示如何通过 ConfigService.getConfig 指定命名空间。
+ * 对应 Apollo 中 application.yml 类型命名空间的配置读取方式。
  */
 public class ApplicationYml {
     public static void main(String[] args) {

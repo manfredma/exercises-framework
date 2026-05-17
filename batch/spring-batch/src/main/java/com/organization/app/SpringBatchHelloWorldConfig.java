@@ -17,6 +17,10 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.ClassPathResource;
 
+/**
+ * Spring Batch 批处理配置类，演示从 CSV 文件读取员工数据、经过处理器转换后输出的完整 Job 流程。
+ * 展示 ItemReader、ItemProcessor、ItemWriter 三大核心接口及 chunk 模式的用法。
+ */
 @Configuration
 @EnableBatchProcessing
 public class SpringBatchHelloWorldConfig {

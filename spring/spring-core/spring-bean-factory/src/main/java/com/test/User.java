@@ -2,6 +2,10 @@ package com.test;
 
 import java.util.List;
 
+/**
+ * 用户模型类，用于 BeanWrapper 和 BeanFactory 相关演示中的目标数据对象。
+ * 包含姓名、年龄、邮箱、地址和爱好等字段，支持标准 getter/setter 访问。
+ */
 public class User {
 
     private String name;

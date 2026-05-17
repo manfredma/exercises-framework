@@ -17,12 +17,12 @@
         <dependency>
             <groupId>org.jeasy</groupId>
             <artifactId>easy-rules-support</artifactId>
-            <version>4.0.0</version>
+            <version>${easy-rules-support.version}</version>
         </dependency>
         <dependency>
             <groupId>org.jeasy</groupId>
             <artifactId>easy-rules-mvel</artifactId>
-            <version>4.0.0</version>
+            <version>${easy-rules-mvel.version}</version>
         </dependency>
     </dependencies>
 </project>

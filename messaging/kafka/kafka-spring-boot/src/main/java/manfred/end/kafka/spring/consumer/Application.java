@@ -8,6 +8,10 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.kafka.config.TopicBuilder;
 
+/**
+ * Kafka Spring Boot 消费者应用入口，演示通过 @KafkaListener 注解监听指定 Topic 并消费消息。
+ * 展示 Spring Kafka 消费者的最简配置方式及消息回调处理。
+ */
 @SpringBootApplication
 public class Application {
 

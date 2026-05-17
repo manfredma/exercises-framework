@@ -6,6 +6,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.env.EnvironmentPostProcessor;
 import org.springframework.core.env.ConfigurableEnvironment;
 
+/**
+ * 自定义环境后处理器，实现 EnvironmentPostProcessor 在 Spring Boot 环境准备阶段介入。
+ * 演示 EnvironmentPostProcessor 的执行时机及日志系统初始化前 LOGGER 无法输出的特殊现象。
+ */
 public class MyEnvironmentPostProcessor implements EnvironmentPostProcessor {
     private static final Logger LOGGER = getLogger(MyEnvironmentPostProcessor.class);
 

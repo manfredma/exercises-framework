@@ -7,7 +7,11 @@ import org.jeasy.states.core.TransitionBuilder;
 import java.util.HashSet;
 import java.util.Set;
 
-public class Boot {
+/**
+ * Easy States 有限状态机演示，以旋转门（Turnstile）为例展示状态、事件、转换的定义与触发。
+ * 演示 FiniteStateMachineBuilder 构建状态机及 EventHandler 处理状态转换回调的用法。
+ */
+public class EasyStatesDemo {
     public static void main(String[] args) throws FiniteStateMachineException {
         // 1. First, let's define states
         State locked = new State("locked");

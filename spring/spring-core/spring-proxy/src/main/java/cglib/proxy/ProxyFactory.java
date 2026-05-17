@@ -7,8 +7,8 @@ import net.sf.cglib.proxy.MethodProxy;
 import java.lang.reflect.Method;
 
 /**
- * Cglib子类代理工厂
- * 对UserDao在内存中动态构建一个子类对象
+ * CGLIB 子类代理工厂，使用 Enhancer 在内存中动态生成目标类的子类作为代理对象。
+ * 演示 CGLIB 通过字节码增强实现方法拦截，无需目标类实现任何接口。
  */
 public class ProxyFactory implements MethodInterceptor {
     Class clazz;

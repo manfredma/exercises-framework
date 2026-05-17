@@ -5,11 +5,12 @@ import io.github.resilience4j.circuitbreaker.CircuitBreakerRegistry;
 import io.vavr.CheckedFunction0;
 import io.vavr.control.Try;
 
+
 /**
- * @author manfred
- * @since 2019-12-16 下午8:54
+ * Resilience4j 熔断器演示，展示如何通过 CircuitBreakerRegistry 创建熔断器并装饰函数调用。
+ * 演示使用 Vavr 的 Try 进行函数式链式调用及熔断后的结果处理方式。
  */
-public class Boot {
+public class Resilience4jCircuitBreakerDemo {
     public static void main(String[] args) {
         CircuitBreakerRegistry circuitBreakerRegistry = CircuitBreakerRegistry.ofDefaults();
         CircuitBreaker circuitBreaker = circuitBreakerRegistry.circuitBreaker("uniqueName");

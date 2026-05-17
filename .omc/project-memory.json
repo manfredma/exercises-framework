@@ -1,0 +1,335 @@
+{
+  "version": "1.0.0",
+  "lastScanned": 1779001266964,
+  "projectRoot": "/Users/maxingfang/IdeaProjects/github/exercises-framework",
+  "techStack": {
+    "languages": [],
+    "frameworks": [],
+    "packageManager": null,
+    "runtime": null
+  },
+  "build": {
+    "buildCommand": null,
+    "testCommand": null,
+    "lintCommand": null,
+    "devCommand": null,
+    "scripts": {}
+  },
+  "conventions": {
+    "namingStyle": null,
+    "importStyle": null,
+    "testPattern": null,
+    "fileOrganization": null
+  },
+  "structure": {
+    "isMonorepo": false,
+    "workspaces": [],
+    "mainDirectories": [],
+    "gitBranches": null
+  },
+  "customNotes": [],
+  "directoryMap": {},
+  "hotPaths": [
+    {
+      "path": "pom.xml",
+      "accessCount": 6,
+      "lastAccessed": 1779024591639,
+      "type": "file"
+    },
+    {
+      "path": "spring/spring-boot/spring-boot-web/spring-boot-web-tomcat/src/main/java/manfred/end/spring/boot/tomcat/exception/ExceptionHandler.java",
+      "accessCount": 5,
+      "lastAccessed": 1779025183878,
+      "type": "file"
+    },
+    {
+      "path": "spring/spring-boot/spring-boot-config/src/main/java/manfred/spring/boot/config/MyBootstrapper.java",
+      "accessCount": 4,
+      "lastAccessed": 1779025115520,
+      "type": "file"
+    },
+    {
+      "path": "messaging/kafka/kafka-spring-boot/pom.xml",
+      "accessCount": 4,
+      "lastAccessed": 1779025340345,
+      "type": "file"
+    },
+    {
+      "path": "spring/spring-boot/pom.xml",
+      "accessCount": 2,
+      "lastAccessed": 1779001732733,
+      "type": "file"
+    },
+    {
+      "path": "spring/spring-core/pom.xml",
+      "accessCount": 2,
+      "lastAccessed": 1779001735399,
+      "type": "file"
+    },
+    {
+      "path": "batch/spring-batch/src/main/java/com/organization/app/SpringBatchHelloWorldConfig.java",
+      "accessCount": 2,
+      "lastAccessed": 1779024795888,
+      "type": "file"
+    },
+    {
+      "path": "batch/spring-batch/src/main/java/com/organization/app/SpringBatchDemo.java",
+      "accessCount": 2,
+      "lastAccessed": 1779024797555,
+      "type": "file"
+    },
+    {
+      "path": "batch/spring-batch/src/main/java/com/organization/app/Employee.java",
+      "accessCount": 2,
+      "lastAccessed": 1779024799507,
+      "type": "file"
+    },
+    {
+      "path": "config/archaius/src/main/java/manfred/end/ArchaiusConfigDemo.java",
+      "accessCount": 2,
+      "lastAccessed": 1779024805777,
+      "type": "file"
+    },
+    {
+      "path": "config/apollo/src/main/java/boot/TestSpringBootConfigBean.java",
+      "accessCount": 2,
+      "lastAccessed": 1779024808358,
+      "type": "file"
+    },
+    {
+      "path": "config/apollo/src/main/java/boot/DemoApplication.java",
+      "accessCount": 2,
+      "lastAccessed": 1779024810153,
+      "type": "file"
+    },
+    {
+      "path": "config/apollo/src/main/java/nativej/ApplicationListener.java",
+      "accessCount": 2,
+      "lastAccessed": 1779024817348,
+      "type": "file"
+    },
+    {
+      "path": "config/apollo/src/main/java/nativej/ApplicationGet.java",
+      "accessCount": 2,
+      "lastAccessed": 1779024819182,
+      "type": "file"
+    },
+    {
+      "path": "config/apollo/src/main/java/nativej/ApplicationYml.java",
+      "accessCount": 2,
+      "lastAccessed": 1779024821162,
+      "type": "file"
+    },
+    {
+      "path": "config/apollo/src/main/java/spring/AppConfig.java",
+      "accessCount": 2,
+      "lastAccessed": 1779024826978,
+      "type": "file"
+    },
+    {
+      "path": "config/apollo/src/main/java/spring/TestJavaConfigBean.java",
+      "accessCount": 2,
+      "lastAccessed": 1779024829041,
+      "type": "file"
+    },
+    {
+      "path": "config/apollo/src/main/java/spring/TestXmlBean.java",
+      "accessCount": 2,
+      "lastAccessed": 1779024830883,
+      "type": "file"
+    },
+    {
+      "path": "event-sourcing/axon/src/main/java/manfred/end/axon/AxonEventSourcingDemo.java",
+      "accessCount": 2,
+      "lastAccessed": 1779024837535,
+      "type": "file"
+    },
+    {
+      "path": "ioc/guice/src/main/java/com/ilucky/guice/MyModule.java",
+      "accessCount": 2,
+      "lastAccessed": 1779024840356,
+      "type": "file"
+    },
+    {
+      "path": "ioc/guice/src/main/java/com/ilucky/guice/MyService.java",
+      "accessCount": 2,
+      "lastAccessed": 1779024842484,
+      "type": "file"
+    },
+    {
+      "path": "ioc/guice/src/main/java/com/ilucky/guice/MyServiceImpl.java",
+      "accessCount": 2,
+      "lastAccessed": 1779024849270,
+      "type": "file"
+    },
+    {
+      "path": "messaging/kafka/kafka-spring-boot/src/main/java/manfred/end/kafka/spring/producer/Application.java",
+      "accessCount": 2,
+      "lastAccessed": 1779024851873,
+      "type": "file"
+    },
+    {
+      "path": "messaging/kafka/kafka-spring-boot/src/main/java/manfred/end/kafka/spring/consumer/Application.java",
+      "accessCount": 2,
+      "lastAccessed": 1779024858087,
+      "type": "file"
+    },
+    {
+      "path": "messaging/kafka/kafka-spring/src/main/java/manfred/end/mq/kafka/spring/KafkaSpringDemo.java",
+      "accessCount": 2,
+      "lastAccessed": 1779024859955,
+      "type": "file"
+    },
+    {
+      "path": "stability/sentinel/src/main/java/manfred/sentinel/SentinelRateLimiterTest.java",
+      "accessCount": 2,
+      "lastAccessed": 1779024862666,
+      "type": "file"
+    },
+    {
+      "path": "stability/resilience4j/src/main/java/manfred/resilience4j/Resilience4jCircuitBreakerDemo.java",
+      "accessCount": 2,
+      "lastAccessed": 1779024869817,
+      "type": "file"
+    },
+    {
+      "path": "workflow/easy-flows/src/main/java/manfred/end/easy/flows/EasyFlowsDemo.java",
+      "accessCount": 2,
+      "lastAccessed": 1779024872363,
+      "type": "file"
+    },
+    {
+      "path": "workflow/easy-state/src/main/java/manfred/end/easy/states/EasyStatesDemo.java",
+      "accessCount": 2,
+      "lastAccessed": 1779024874548,
+      "type": "file"
+    },
+    {
+      "path": "workflow/easy-rule/src/main/java/manfred/end/EasyRuleDemo.java",
+      "accessCount": 2,
+      "lastAccessed": 1779024876738,
+      "type": "file"
+    },
+    {
+      "path": "workflow/easy-rule/src/main/java/manfred/end/WeatherRule.java",
+      "accessCount": 2,
+      "lastAccessed": 1779024879713,
+      "type": "file"
+    },
+    {
+      "path": "spring/spring-cloud/spring-cloud-resilience/src/main/java/io/github/robwin/Application.java",
+      "accessCount": 2,
+      "lastAccessed": 1779024929386,
+      "type": "file"
+    },
+    {
+      "path": "spring/spring-cloud/spring-cloud-resilience/src/main/java/io/github/robwin/controller/BackendAController.java",
+      "accessCount": 2,
+      "lastAccessed": 1779024932107,
+      "type": "file"
+    },
+    {
+      "path": "spring/spring-cloud/spring-cloud-resilience/src/main/java/io/github/robwin/controller/BackendBController.java",
+      "accessCount": 2,
+      "lastAccessed": 1779024933842,
+      "type": "file"
+    },
+    {
+      "path": "spring/spring-cloud/spring-cloud-resilience/src/main/java/io/github/robwin/controller/BackendCController.java",
+      "accessCount": 2,
+      "lastAccessed": 1779024935778,
+      "type": "file"
+    },
+    {
+      "path": "spring/spring-cloud/spring-cloud-resilience/src/main/java/io/github/robwin/service/BusinessCService.java",
+      "accessCount": 2,
+      "lastAccessed": 1779024938290,
+      "type": "file"
+    },
+    {
+      "path": "messaging/kafka/pom.xml",
+      "accessCount": 2,
+      "lastAccessed": 1779025354324,
+      "type": "file"
+    },
+    {
+      "path": "CLAUDE.md",
+      "accessCount": 1,
+      "lastAccessed": 1779001294801,
+      "type": "file"
+    },
+    {
+      "path": ".claude/settings.json",
+      "accessCount": 1,
+      "lastAccessed": 1779001412625,
+      "type": "file"
+    },
+    {
+      "path": "spring/pom.xml",
+      "accessCount": 1,
+      "lastAccessed": 1779001674297,
+      "type": "file"
+    },
+    {
+      "path": "messaging/pom.xml",
+      "accessCount": 1,
+      "lastAccessed": 1779001680475,
+      "type": "file"
+    },
+    {
+      "path": "stability/pom.xml",
+      "accessCount": 1,
+      "lastAccessed": 1779001684283,
+      "type": "file"
+    },
+    {
+      "path": "workflow/pom.xml",
+      "accessCount": 1,
+      "lastAccessed": 1779001686285,
+      "type": "file"
+    },
+    {
+      "path": "config/pom.xml",
+      "accessCount": 1,
+      "lastAccessed": 1779001688216,
+      "type": "file"
+    },
+    {
+      "path": "batch/pom.xml",
+      "accessCount": 1,
+      "lastAccessed": 1779001689955,
+      "type": "file"
+    },
+    {
+      "path": "event-sourcing/pom.xml",
+      "accessCount": 1,
+      "lastAccessed": 1779001691740,
+      "type": "file"
+    },
+    {
+      "path": "ioc/pom.xml",
+      "accessCount": 1,
+      "lastAccessed": 1779001693596,
+      "type": "file"
+    },
+    {
+      "path": "spring/spring-cloud/pom.xml",
+      "accessCount": 1,
+      "lastAccessed": 1779001705921,
+      "type": "file"
+    },
+    {
+      "path": "ioc/guice/src/main/java/com/ilucky/guice/GuiceInjectionDemo.java",
+      "accessCount": 1,
+      "lastAccessed": 1779024772481,
+      "type": "file"
+    },
+    {
+      "path": "workflow/easy-flows/src/main/java/manfred/end/easy/flows/PrintMessageWork.java",
+      "accessCount": 1,
+      "lastAccessed": 1779024783690,
+      "type": "file"
+    }
+  ],
+  "userDirectives": []
+}

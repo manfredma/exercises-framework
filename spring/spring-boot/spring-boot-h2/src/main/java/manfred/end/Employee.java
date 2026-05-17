@@ -1,5 +1,9 @@
 package manfred.end;
 
+/**
+ * 员工实体类，用于 Spring Boot H2 数据库 CRUD 操作演示中的数据模型。
+ * 包含 id、firstName、lastName、emailId 字段，对应 employees 表结构。
+ */
 public class Employee {
 
     private Long id;

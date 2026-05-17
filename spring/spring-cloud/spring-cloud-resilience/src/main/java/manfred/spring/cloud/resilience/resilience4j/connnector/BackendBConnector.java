@@ -7,6 +7,10 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.HttpServerErrorException;
 
+/**
+ * Backend B 连接器实现（manfred resilience4j 包），未使用注解式熔断，由上层 Service 编程式装饰。
+ * 演示将弹性策略置于服务层而非连接器层的架构风格。
+ */
 @Component(value = "backendBConnector")
 public class BackendBConnector implements Connector {
 

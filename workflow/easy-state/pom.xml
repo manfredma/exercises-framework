@@ -13,7 +13,7 @@
         <dependency>
             <groupId>org.jeasy</groupId>
             <artifactId>easy-states</artifactId>
-            <version>2.0.0</version>
+            <version>${easy-states.version}</version>
         </dependency>
     </dependencies>
 </project>

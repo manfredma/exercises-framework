@@ -3,9 +3,10 @@ package manfred.spring.boot.config;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
+
 /**
- * @author manfred
- * @since 2019-12-11 下午5:21
+ * Spring Boot @Value 注入演示类，展示使用 SpEL 表达式绑定单个配置项的用法。
+ * 演示多层级属性键（如 c.c2）和简单属性键的 @Value 注入方式。
  */
 @Component
 public class C {

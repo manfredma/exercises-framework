@@ -8,6 +8,10 @@ import reactor.core.publisher.Mono;
 
 import java.util.concurrent.CompletableFuture;
 
+/**
+ * Backend A 业务服务实现，将请求委托给 BackendAConnector。
+ * 演示注解式 CircuitBreaker、RateLimiter、Bulkhead 等弹性策略在服务层的透明集成。
+ */
 @Service(value = "businessAService")
 public class BusinessAService implements BusinessService {
 

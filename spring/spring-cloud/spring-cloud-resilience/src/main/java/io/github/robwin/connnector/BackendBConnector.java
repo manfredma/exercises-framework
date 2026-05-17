@@ -18,6 +18,10 @@ import java.util.concurrent.CompletableFuture;
 
 import static io.github.resilience4j.bulkhead.annotation.Bulkhead.*;
 
+/**
+ * Backend B 的连接器实现，演示 Retry 与 RateLimiter 注解及 Bulkhead（线程池隔离）的组合使用。
+ * 通过 Vavr Try 实现故障恢复，展示函数式风格的降级处理。
+ */
 @RateLimiter(name = "backendB")
 @Retry(name = "backendB")
 @Component(value = "backendBConnector")

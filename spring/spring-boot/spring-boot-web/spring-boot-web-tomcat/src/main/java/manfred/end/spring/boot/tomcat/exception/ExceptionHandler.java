@@ -14,6 +14,10 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
+/**
+ * 全局异常处理器，继承 ResponseEntityExceptionHandler 拦截 @Valid 校验失败异常。
+ * 演示 @ControllerAdvice 统一处理 MethodArgumentNotValidException，返回包含时间戳和错误列表的结构化响应。
+ */
 @ControllerAdvice
 public class ExceptionHandler extends ResponseEntityExceptionHandler {
 

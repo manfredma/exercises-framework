@@ -15,7 +15,11 @@ import static org.jeasy.flows.workflow.ParallelFlow.Builder.aNewParallelFlow;
 import static org.jeasy.flows.workflow.RepeatFlow.Builder.aNewRepeatFlow;
 import static org.jeasy.flows.workflow.SequentialFlow.Builder.aNewSequentialFlow;
 
-public class Boot {
+/**
+ * Easy Flows 工作流引擎综合演示，展示顺序流、重复流、并行流、条件流的嵌套组合使用。
+ * 演示 WorkFlowEngine 驱动复杂工作流执行及 WorkContext、WorkReport 的传递机制。
+ */
+public class EasyFlowsDemo {
     public static void main(String[] args) {
         PrintMessageWork work1 = new PrintMessageWork("foo");
         PrintMessageWork work2 = new PrintMessageWork("hello");

@@ -63,6 +63,26 @@
         <axon.version>4.9.1</axon.version>
         <!-- Config -->
         <archaius.version>0.7.6</archaius.version>
+
+        <!-- Additional -->
+        <apollo.version>1.1.0</apollo.version>
+        <rxjava.version>0.20.7</rxjava.version>
+        <easy-flows.version>0.3</easy-flows.version>
+        <easy-states.version>2.0.0</easy-states.version>
+        <easy-rules-support.version>4.0.0</easy-rules-support.version>
+        <easy-rules-mvel.version>4.0.0</easy-rules-mvel.version>
+        <cglib.version>3.3.0</cglib.version>
+        <aspectjweaver.version>1.9.4</aspectjweaver.version>
+        <resilience4j-springboot2.version>1.7.0</resilience4j-springboot2.version>
+        <resilience4j-rxjava2.version>1.7.0</resilience4j-rxjava2.version>
+        <resilience4j-reactor.version>1.7.0</resilience4j-reactor.version>
+        <resilience4j-annotations.version>1.7.0</resilience4j-annotations.version>
+        <rxjava2.version>2.2.8</rxjava2.version>
+        <vavr.version>0.10.0</vavr.version>
+        <micrometer-prometheus.version>1.3.2</micrometer-prometheus.version>
+        <reactor-test.version>3.3.1.RELEASE</reactor-test.version>
+        <spring-cloud-netflix-hystrix.version>2.2.1.RELEASE</spring-cloud-netflix-hystrix.version>
+        <spring-cloud-starter.version>3.0.2</spring-cloud-starter.version>
     </properties>
 
     <!-- 版本管理：子模块按需引用，无需写版本号 -->
@@ -202,6 +222,97 @@
                 <groupId>com.netflix.archaius</groupId>
                 <artifactId>archaius-core</artifactId>
                 <version>${archaius.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.ctrip.framework.apollo</groupId>
+                <artifactId>apollo-client</artifactId>
+                <version>${apollo.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.netflix.rxjava</groupId>
+                <artifactId>rxjava-core</artifactId>
+                <version>${rxjava.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.jeasy</groupId>
+                <artifactId>easy-flows</artifactId>
+                <version>${easy-flows.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.jeasy</groupId>
+                <artifactId>easy-states</artifactId>
+                <version>${easy-states.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.jeasy</groupId>
+                <artifactId>easy-rules-support</artifactId>
+                <version>${easy-rules-support.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.jeasy</groupId>
+                <artifactId>easy-rules-mvel</artifactId>
+                <version>${easy-rules-mvel.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cglib</groupId>
+                <artifactId>cglib</artifactId>
+                <version>${cglib.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.aspectj</groupId>
+                <artifactId>aspectjweaver</artifactId>
+                <version>${aspectjweaver.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.github.resilience4j</groupId>
+                <artifactId>resilience4j-spring-boot2</artifactId>
+                <version>${resilience4j-springboot2.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.github.resilience4j</groupId>
+                <artifactId>resilience4j-rxjava2</artifactId>
+                <version>${resilience4j-rxjava2.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.github.resilience4j</groupId>
+                <artifactId>resilience4j-reactor</artifactId>
+                <version>${resilience4j-reactor.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.github.resilience4j</groupId>
+                <artifactId>resilience4j-annotations</artifactId>
+                <version>${resilience4j-annotations.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.reactivex.rxjava2</groupId>
+                <artifactId>rxjava</artifactId>
+                <version>${rxjava2.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.vavr</groupId>
+                <artifactId>vavr-jackson</artifactId>
+                <version>${vavr.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.micrometer</groupId>
+                <artifactId>micrometer-registry-prometheus</artifactId>
+                <version>${micrometer-prometheus.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.projectreactor</groupId>
+                <artifactId>reactor-test</artifactId>
+                <version>${reactor-test.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
+                <version>${spring-cloud-netflix-hystrix.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter</artifactId>
+                <version>${spring-cloud-starter.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

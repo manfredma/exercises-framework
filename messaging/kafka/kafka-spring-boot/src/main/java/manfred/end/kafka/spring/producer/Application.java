@@ -8,6 +8,10 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.kafka.config.TopicBuilder;
 import org.springframework.kafka.core.KafkaTemplate;
 
+/**
+ * Kafka Spring Boot 生产者应用入口，演示通过 KafkaTemplate 向指定 Topic 发送消息。
+ * 展示 TopicBuilder 创建 Topic 及 ApplicationRunner 在启动后自动发送消息的用法。
+ */
 @SpringBootApplication
 public class Application {
 

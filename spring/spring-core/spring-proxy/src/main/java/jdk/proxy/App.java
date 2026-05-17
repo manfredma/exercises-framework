@@ -4,7 +4,8 @@ import dao.IUserDao;
 import dao.UserDao;
 
 /**
- * 测试类
+ * JDK 动态代理演示入口，通过 ProxyFactory 在运行时为 IUserDao 接口生成代理对象。
+ * 演示 JDK 动态代理要求目标类必须实现接口，并展示代理类与目标类的继承关系差异。
  */
 public class App {
     public static void main(String[] args) {

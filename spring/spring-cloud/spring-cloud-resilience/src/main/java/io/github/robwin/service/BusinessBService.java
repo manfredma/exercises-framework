@@ -12,6 +12,10 @@ import reactor.core.publisher.Mono;
 
 import java.util.concurrent.CompletableFuture;
 
+/**
+ * Backend B 业务服务实现，以编程方式手动装饰 CircuitBreaker，并结合响应式流（Flux/Mono）操作。
+ * 演示 CircuitBreakerOperator 在 Reactor 管道中的使用方式。
+ */
 @Service(value = "businessBService")
 public class BusinessBService implements BusinessService  {
 

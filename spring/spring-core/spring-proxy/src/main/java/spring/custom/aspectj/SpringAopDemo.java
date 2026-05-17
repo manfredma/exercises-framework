@@ -3,10 +3,12 @@ package spring.custom.aspectj;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+
 /**
- * Created by cheng.xi on 2017-03-29 10:34.
+ * Spring AOP 自定义注解驱动演示入口，加载 XML 配置并触发带 @UseAop 注解方法的切面拦截。
+ * 演示 Spring AOP 基于自定义注解切点的完整执行流程。
  */
-public class Main {
+public class SpringAopDemo {
 
     public static void main(String[] args) {
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("classpath" +

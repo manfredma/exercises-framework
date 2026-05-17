@@ -1,5 +1,9 @@
 package com.organization.app;
 
+/**
+ * 员工数据模型，用于 Spring Batch 批处理流程中 CSV 文件行到 Java 对象的映射。
+ * 包含姓名、年龄和薪资字段，供 ItemReader 反序列化使用。
+ */
 public class Employee {
     private String firstName;
     private String lastName;

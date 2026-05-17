@@ -9,6 +9,10 @@ import reactor.core.publisher.Mono;
 
 import java.util.concurrent.CompletableFuture;
 
+/**
+ * Backend C 业务服务实现，将请求委托给 BackendCConnector。
+ * 演示通过 Connector 接口屏蔽具体弹性策略（CircuitBreaker + Retry）的服务层设计。
+ */
 @Service(value = "businessCService")
 public class BusinessCService implements BusinessService  {
 

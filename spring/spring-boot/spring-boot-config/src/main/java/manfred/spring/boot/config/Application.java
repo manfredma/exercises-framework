@@ -7,8 +7,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 
+
 /**
- * @author manfred
+ * Spring Boot 配置演示应用启动类，对比 @ConfigurationProperties 与 @Value 两种属性注入方式。
+ * 同时演示 SLF4J Logger 工厂的两种获取方式（静态工厂方法和 ILoggerFactory）。
  */
 @SpringBootApplication(scanBasePackages = {"manfred.spring.boot.config.**"})
 public class Application {

@@ -1,5 +1,9 @@
 package manfred.tag;
 
+/**
+ * 汽车模型类，作为 Spring 自定义 XML 标签演示中的目标 Bean。
+ * 包含品牌、颜色、价格和最大速度字段，由自定义命名空间解析器注入属性值。
+ */
 public class Car {
     private int maxSpeed;
     private double price;

@@ -8,9 +8,10 @@ import com.ctrip.framework.apollo.model.ConfigChangeEvent;
 
 import java.util.concurrent.TimeUnit;
 
+
 /**
- * @author manfred
- * @since 2019-11-11 下午3:27
+ * Apollo 原生 Java API 配置监听演示，注册 ConfigChangeListener 监听配置变更事件。
+ * 展示如何在配置发生变化时获取旧值、新值及变更类型。
  */
 public class ApplicationListener {
 

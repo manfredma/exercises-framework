@@ -20,13 +20,13 @@
         <dependency>
             <groupId>cglib</groupId>
             <artifactId>cglib</artifactId>
-            <version>3.3.0</version>
+            <version>${cglib.version}</version>
         </dependency>
 
         <dependency>
             <groupId>org.aspectj</groupId>
             <artifactId>aspectjweaver</artifactId>
-            <version>1.9.4</version>
+            <version>${aspectjweaver.version}</version>
         </dependency>
 
     </dependencies>

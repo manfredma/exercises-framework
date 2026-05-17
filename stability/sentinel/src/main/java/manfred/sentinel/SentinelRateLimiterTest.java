@@ -11,9 +11,10 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 
+
 /**
- * @author manfred
- * @since 2019-12-17 上午9:58
+ * Alibaba Sentinel 限流演示，通过 FlowRule 配置 QPS 阈值并使用 SphU.entry 进行资源保护。
+ * 演示流量超出限制时触发 BlockException 的处理逻辑及 Sentinel 基本 API 的使用方式。
  */
 public class SentinelRateLimiterTest {
     public static void main(String[] args) throws InterruptedException {

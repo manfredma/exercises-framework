@@ -10,6 +10,10 @@ import reactor.core.publisher.Mono;
 
 import java.util.concurrent.CompletableFuture;
 
+/**
+ * Backend C 的 REST 控制器，演示 CircuitBreaker 与 Retry 组合使用的弹性调用端点。
+ * 提供多种调用场景（同步、响应式、异步）以验证熔断与重试的协同效果。
+ */
 @RestController
 @RequestMapping(value = "/backendC")
 public class BackendCController {

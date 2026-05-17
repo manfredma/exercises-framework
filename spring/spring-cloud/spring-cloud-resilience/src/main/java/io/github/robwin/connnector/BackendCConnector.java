@@ -17,6 +17,10 @@ import java.util.concurrent.CompletableFuture;
 
 import static io.github.resilience4j.bulkhead.annotation.Bulkhead.*;
 
+/**
+ * Backend C 的连接器实现，演示 CircuitBreaker 与 Retry 注解组合及 fallbackMethod 降级方法的使用。
+ * 同时展示 Bulkhead（信号量和线程池两种模式）对并发资源的隔离保护。
+ */
 @CircuitBreaker(name = "backendC")
 @Retry(name = "backendC")
 @Component(value = "backendCConnector")

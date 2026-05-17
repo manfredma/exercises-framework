@@ -12,6 +12,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 
+/**
+ * Spring Boot H2 内存数据库演示应用，实现 CommandLineRunner 在启动后执行 JDBC CRUD 操作。
+ * 演示 Spring Boot 自动配置 H2 数据源及 JdbcTemplate 进行增删改查和批量插入的使用方式。
+ */
 @SpringBootApplication
 public class Application implements CommandLineRunner {
 

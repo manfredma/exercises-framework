@@ -5,9 +5,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.hystrix.EnableHystrix;
 import org.springframework.context.ApplicationContext;
 
+
 /**
- * @author manfred
- * @since 2019-12-16 下午3:00
+ * Hystrix 熔断器示例应用入口，演示 @EnableHystrix 开启熔断支持。
+ * 通过循环调用模拟高并发场景，观察熔断器触发与 fallback 降级的效果。
  */
 @SpringBootApplication(scanBasePackages = {"manfred.spring.cloud.resilience.hystrix"})
 @EnableHystrix

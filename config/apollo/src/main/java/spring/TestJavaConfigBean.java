@@ -2,9 +2,10 @@ package spring;
 
 import org.springframework.beans.factory.annotation.Value;
 
+
 /**
- * @author manfred
- * @since 2019-11-11 下午3:58
+ * Apollo 与 Spring Java Config 集成的配置 Bean，通过 @Value 注解绑定 Apollo 中的配置项。
+ * 演示 timeout 和 batch 两个参数的动态注入及默认值回退。
  */
 public class TestJavaConfigBean {
 

@@ -4,8 +4,10 @@ import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
 
+
 /**
- *
+ * JDK 动态代理工厂，使用 Proxy.newProxyInstance 和 InvocationHandler 生成接口代理对象。
+ * 演示 JDK 反射代理的核心机制：拦截所有接口方法调用并在前后织入横切逻辑。
  */
 public class ProxyFactory {
 
