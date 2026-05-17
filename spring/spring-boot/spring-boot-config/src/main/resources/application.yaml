@@ -1,0 +1,13 @@
+spring:
+  profiles:
+    active: b
+    include: c
+  output:
+    ansi:
+      enabled: NEVER
+c: 111
+
+logging:
+  config: classpath:log4j2-prod.xml
+
+d: application
