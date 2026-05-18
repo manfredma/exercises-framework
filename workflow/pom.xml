@@ -9,10 +9,31 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <artifactId>workflow</artifactId>
-    <packaging>pom</packaging>
-    <modules>
-        <module>easy-flows</module>
-        <module>easy-rule</module>
-        <module>easy-state</module>
-    </modules>
+    <name>工作流引擎练习（EasyFlows/EasyRules/EasyStates）</name>
+    <dependencies>
+        <dependency>
+            <groupId>org.jeasy</groupId>
+            <artifactId>easy-flows</artifactId>
+            <version>${easy-flows.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jeasy</groupId>
+            <artifactId>easy-rules-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.jeasy</groupId>
+            <artifactId>easy-rules-support</artifactId>
+            <version>${easy-rules-support.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jeasy</groupId>
+            <artifactId>easy-rules-mvel</artifactId>
+            <version>${easy-rules-mvel.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jeasy</groupId>
+            <artifactId>easy-states</artifactId>
+            <version>${easy-states.version}</version>
+        </dependency>
+    </dependencies>
 </project>

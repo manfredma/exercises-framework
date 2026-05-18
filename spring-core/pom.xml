@@ -8,16 +8,20 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>event-sourcing</artifactId>
-    <name>事件溯源练习（Axon Framework）</name>
+    <artifactId>spring-core</artifactId>
+    <name>Spring Core（IoC/AOP/代理）练习</name>
     <dependencies>
         <dependency>
-            <groupId>org.axonframework</groupId>
-            <artifactId>axon-messaging</artifactId>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.axonframework</groupId>
-            <artifactId>axon-modelling</artifactId>
+            <groupId>cglib</groupId>
+            <artifactId>cglib</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
         </dependency>
     </dependencies>
 </project>

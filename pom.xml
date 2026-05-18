@@ -11,9 +11,11 @@
 
     <modules>
         <!-- Spring -->
-        <module>spring</module>
+        <module>spring-core</module>
+        <module>spring-boot</module>
+        <module>spring-cloud</module>
         <!-- Messaging -->
-        <module>messaging</module>
+        <module>messaging-kafka</module>
         <!-- Stability -->
         <module>stability</module>
         <!-- Workflow -->
@@ -21,11 +23,11 @@
         <!-- Config -->
         <module>config</module>
         <!-- Batch -->
-        <module>batch</module>
+        <module>spring-batch</module>
         <!-- Event Sourcing -->
         <module>event-sourcing</module>
         <!-- IoC -->
-        <module>ioc</module>
+        <module>ioc-guice</module>
     </modules>
 
     <properties>

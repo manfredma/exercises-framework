@@ -1,4 +1,0 @@
-org.springframework.boot.BootstrapRegistryInitializer=\
- manfred.spring.boot.config.MyBootstrapper
-org.springframework.boot.env.EnvironmentPostProcessor=\
-  manfred.spring.boot.config.boot.MyEnvironmentPostProcessor

@@ -8,29 +8,30 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>stability</artifactId>
-    <name>稳定性组件练习（Hystrix/Sentinel/Resilience4j）</name>
+    <artifactId>spring-batch</artifactId>
+    <name>Spring Batch 批处理练习</name>
     <dependencies>
         <dependency>
-            <groupId>com.netflix.hystrix</groupId>
-            <artifactId>hystrix-core</artifactId>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-batch</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.netflix.rxjava</groupId>
-            <artifactId>rxjava-core</artifactId>
-            <version>${rxjava.version}</version>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-jdbc</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.alibaba.csp</groupId>
-            <artifactId>sentinel-core</artifactId>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <scope>runtime</scope>
         </dependency>
         <dependency>
-            <groupId>io.github.resilience4j</groupId>
-            <artifactId>resilience4j-circuitbreaker</artifactId>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
+            <groupId>org.springframework.batch</groupId>
+            <artifactId>spring-batch-test</artifactId>
             <scope>test</scope>
         </dependency>
     </dependencies>
