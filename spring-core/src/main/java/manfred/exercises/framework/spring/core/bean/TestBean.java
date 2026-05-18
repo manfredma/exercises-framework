@@ -22,7 +22,7 @@ public class TestBean {
     }
 
     public static void main(String[] args) {
-        BeanFactory fa = new ClassPathXmlApplicationContext("beans.xml");
+        BeanFactory fa = new ClassPathXmlApplicationContext("bean-factory-beans.xml");
         TestBean bean = fa.getBean("testBean", TestBean.class);
         System.out.println(bean.getShowMsg());
 

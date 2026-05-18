@@ -19,7 +19,7 @@ public class LogBeforeLogin {
 
     private String name;
 	
-    @Pointcut("@annotation(spring.custom.aspectj.UseAop)")
+    @Pointcut("@annotation(manfred.exercises.framework.spring.core.proxy.aspectj.UseAop)")
     public void xxx(){}
 
     @Before("xxx()")

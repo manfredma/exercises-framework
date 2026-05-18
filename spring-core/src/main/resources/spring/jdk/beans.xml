@@ -6,13 +6,13 @@
          http://www.springframework.org/schema/aop
          https://www.springframework.org/schema/aop/spring-aop.xsd">
 
-    <bean id="userDao" class="dao.UserDao"/>
+    <bean id="userDao" class="manfred.exercises.framework.spring.core.proxy.dao.UserDao"/>
 
     <aop:config>
         <aop:pointcut id="pointCut" expression="execution(* dao.*.*(..))"/>
         <aop:advisor advice-ref="advice" pointcut-ref="pointCut"/>
     </aop:config>
 
-    <bean id="advice" class="spring.interceptor.TimeCostInterceptor"/>
+    <bean id="advice" class="manfred.exercises.framework.spring.core.proxy.interceptor.TimeCostInterceptor"/>
 
 </beans>

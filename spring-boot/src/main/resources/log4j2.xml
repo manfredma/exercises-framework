@@ -7,7 +7,7 @@
         </Console>
     </Appenders>
     <Loggers>
-        <Logger name="manfred.spring.boot.config" level="info" additivity="false" includeLocation="true">
+        <Logger name="manfred.exercises.framework.spring.boot.config" level="info" additivity="false" includeLocation="true">
             <AppenderRef ref="Console"/>
         </Logger>
 

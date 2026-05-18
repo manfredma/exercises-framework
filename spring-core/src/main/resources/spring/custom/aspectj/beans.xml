@@ -10,16 +10,16 @@
     <context:annotation-config/>
 
     <!--业务实现-->
-    <bean id="loginService" class="spring.custom.aspectj.LoginServiceImpl"/>
+    <bean id="loginService" class="manfred.exercises.framework.spring.core.proxy.aspectj.impl.LoginServiceImpl"/>
 
     <!--Aspect-->
-    <bean id="logBeforeLoginAspect3" class="spring.custom.aspectj.LogBeforeLogin">
+    <bean id="logBeforeLoginAspect3" class="manfred.exercises.framework.spring.core.proxy.aspectj.LogBeforeLogin">
         <property name="name" value="logBeforeLoginAspect3"/>
     </bean>
-    <bean id="logBeforeLoginAspect" class="spring.custom.aspectj.LogBeforeLogin">
+    <bean id="logBeforeLoginAspect" class="manfred.exercises.framework.spring.core.proxy.aspectj.LogBeforeLogin">
         <property name="name" value="logBeforeLoginAspect"/>
     </bean>
-    <bean id="logBeforeLoginAspect2" class="spring.custom.aspectj.LogBeforeLogin">
+    <bean id="logBeforeLoginAspect2" class="manfred.exercises.framework.spring.core.proxy.aspectj.LogBeforeLogin">
         <property name="name" value="logBeforeLoginAspect2"/>
     </bean>
 
