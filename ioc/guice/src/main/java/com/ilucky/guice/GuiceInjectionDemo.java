@@ -5,14 +5,8 @@ import com.google.inject.Injector;
 import com.ilucky.guice.impl.MyServiceImpl;
 
 /**
- * v1.0:20161114
- *
- * @author IluckySi
- * 入门实例和单例模式
- * Binder接口作用是创建接口和其实现类的映射关系.
- * Module接口作用是维护一组 Bindings.
- * Injector接口作用是创建对象和维护对象的生命周期.
- * Guice类是创建Injector和Modules的联系.
+ * Google Guice 依赖注入入门演示，展示 Binder/Module/Injector 三者的协作关系。
+ * 演示接口绑定、对象获取及单例模式（Scopes.SINGLETON）的配置与验证。
  */
 public class GuiceInjectionDemo {
 

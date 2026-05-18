@@ -6,4 +6,8 @@ package manfred.end.axon;
  * 演示聚合根、命令处理、事件发布与事件溯源的基本用法（待完善）。
  */
 public class AxonEventSourcingDemo {
+
+    public static void main(String[] args) {
+        System.out.println("Axon Framework 事件溯源演示 - 待完善");
+    }
 }
