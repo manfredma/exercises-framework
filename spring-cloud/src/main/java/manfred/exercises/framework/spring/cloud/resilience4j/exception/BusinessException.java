@@ -1,8 +1,8 @@
 package manfred.exercises.framework.spring.cloud.resilience4j.exception;
 
 /**
- * 业务异常类（manfred resilience4j 包），用于模拟被 CircuitBreaker 忽略的业务错误。
- * 演示通过 ignoreExceptions 配置排除特定异常类型，使其不触发熔断计数。
+ * 业务异常类，用于模拟被 CircuitBreaker 忽略（不计入失败）的业务错误场景。
+ * 演示 Resilience4j 中 ignoreExceptions 配置项的作用。
  */
 public class BusinessException extends RuntimeException {
 

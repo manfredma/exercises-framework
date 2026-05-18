@@ -1,10 +1,10 @@
-package io.github.robwin.connector;
+package manfred.exercises.framework.spring.cloud.resilience4j.connector;
 
 
 import io.github.resilience4j.bulkhead.annotation.Bulkhead;
 import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
-import io.github.resilience4j.ratelimiter.annotation.RateLimiter;
-import io.github.robwin.exception.BusinessException;
+import io.github.resilience4j.retry.annotation.Retry;
+import manfred.exercises.framework.spring.cloud.resilience4j.exception.BusinessException;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.HttpClientErrorException;
@@ -18,28 +18,24 @@ import java.util.concurrent.CompletableFuture;
 import static io.github.resilience4j.bulkhead.annotation.Bulkhead.*;
 
 /**
- * This Connector shows how to use the CircuitBreaker annotation.
+ * Backend C 的连接器实现，演示 CircuitBreaker 与 Retry 注解组合及 fallbackMethod 降级方法的使用。
+ * 同时展示 Bulkhead（信号量和线程池两种模式）对并发资源的隔离保护。
  */
-@CircuitBreaker(name = "backendA")
-@RateLimiter(name = "backendA")
-@Component(value = "backendAConnector")
-public class BackendAConnector implements Connector {
+@CircuitBreaker(name = "backendC")
+@Retry(name = "backendC")
+@Component(value = "backendCConnector")
+public class BackendCConnector implements Connector {
 
     @Override
-    @Bulkhead(name = "backendA")
+    @Bulkhead(name = "backendC")
     public String failure() {
         throw new HttpServerErrorException(HttpStatus.INTERNAL_SERVER_ERROR, "This is a remote exception");
     }
 
     @Override
-    public String ignoreException() {
-        throw new BusinessException("This exception is ignored by the CircuitBreaker of backend A");
-    }
-
-    @Override
-    @Bulkhead(name = "backendA")
+    @Bulkhead(name = "backendC")
     public String success() {
-        return "Hello World from backend A";
+        return "Hello World from backend C";
     }
 
     @Override
@@ -48,54 +44,55 @@ public class BackendAConnector implements Connector {
     }
 
     @Override
-    @Bulkhead(name = "backendA")
+    public String ignoreException() {
+        throw new BusinessException("This exception is ignored by the CircuitBreaker of backend C");
+    }
+
+    @Override
+    @Bulkhead(name = "backendC")
     public Flux<String> fluxFailure() {
         return Flux.error(new IOException("BAM!"));
     }
 
     @Override
-    @Bulkhead(name = "backendA")
+    @Bulkhead(name = "backendC")
     public Mono<String> monoSuccess() {
-        return Mono.just("Hello World from backend A");
+        return Mono.just("Hello World from backend C");
     }
 
     @Override
-    @Bulkhead(name = "backendA")
+    @Bulkhead(name = "backendC")
     public Mono<String> monoFailure() {
         return Mono.error(new IOException("BAM!"));
     }
 
     @Override
-    @Bulkhead(name = "backendA")
+    @Bulkhead(name = "backendC")
     public Flux<String> fluxSuccess() {
         return Flux.just("Hello", "World");
     }
 
     @Override
-    @CircuitBreaker(name = "backendA", fallbackMethod = "fallback")
-    public String failureWithFallback() {
-        return failure();
-    }
-
-    @Override
-    @Bulkhead(name = "backendA", type = Type.THREADPOOL)
+    @Bulkhead(name = "backendC", type = Type.THREADPOOL)
     public CompletableFuture<String> futureSuccess() {
-        return CompletableFuture.completedFuture("Hello World from backend A");
+        return CompletableFuture.completedFuture("Hello World from backend C");
     }
 
     @Override
-    @Bulkhead(name = "backendA", type = Type.THREADPOOL)
+    @Bulkhead(name = "backendC", type = Type.THREADPOOL)
     public CompletableFuture<String> futureFailure() {
         CompletableFuture<String> future = new CompletableFuture<>();
         future.completeExceptionally(new IOException("BAM!"));
         return future;
     }
 
-    private String fallback(HttpServerErrorException ex) {
-        return "Recovered HttpServerErrorException: " + ex.getMessage();
+    @Override
+    @CircuitBreaker(name = "backendC", fallbackMethod = "fallback")
+    public String failureWithFallback() {
+        return failure();
     }
 
     private String fallback(Throwable ex) {
-        return "Recovered Throwable: " + ex.getMessage();
+        return "Recovered " + ex.getMessage();
     }
 }

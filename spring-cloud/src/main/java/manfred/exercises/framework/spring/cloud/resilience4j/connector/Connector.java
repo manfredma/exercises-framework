@@ -1,17 +1,35 @@
 package manfred.exercises.framework.spring.cloud.resilience4j.connector;
 
-import io.reactivex.Observable;
+import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
+
+import java.util.concurrent.CompletableFuture;
 
 /**
- * 后端连接器接口（manfred resilience4j 包），定义同步调用和 RxJava Observable 流调用的操作契约。
- * 演示 Resilience4j 对 RxJava 响应式流的熔断保护支持。
+ * 后端连接器接口，定义同步、响应式及异步多种调用方式下的成功/失败/降级操作契约。
+ * 各实现类通过注解或编程式方式集成 Resilience4j 弹性策略。
  */
 public interface Connector {
     String failure();
 
     String success();
 
+    String successException();
+
     String ignoreException();
 
-    Observable<String> methodWhichReturnsAStream();
+    Flux<String> fluxFailure();
+
+    Mono<String> monoSuccess();
+
+    Mono<String> monoFailure();
+
+    Flux<String> fluxSuccess();
+
+    String failureWithFallback();
+
+    CompletableFuture<String> futureSuccess();
+
+    CompletableFuture<String> futureFailure();
+
 }

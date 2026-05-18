@@ -1,4 +1,4 @@
-package io.github.robwin;
+package manfred.exercises.framework.spring.cloud.resilience4j;
 
 import io.github.resilience4j.circuitbreaker.CircuitBreaker;
 import io.github.resilience4j.circuitbreaker.CircuitBreakerRegistry;

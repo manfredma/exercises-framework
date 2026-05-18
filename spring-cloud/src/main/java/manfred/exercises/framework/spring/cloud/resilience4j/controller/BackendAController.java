@@ -5,10 +5,14 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
+
+import java.util.concurrent.CompletableFuture;
 
 /**
- * Backend A 的 REST 控制器（manfred resilience4j 包），提供失败、成功、忽略异常及带恢复的端点。
- * 演示注解式 CircuitBreaker 与 Vavr Try 函数式恢复在 Web 层的集成。
+ * Backend A 的 REST 控制器，演示多种调用场景下 Resilience4j 弹性能力的使用。
+ * 提供同步、Mono、Flux、CompletableFuture 等多种调用方式的成功/失败/降级端点。
  */
 @RestController
 @RequestMapping(value = "/backendA")
@@ -30,13 +34,48 @@ public class BackendAController {
         return businessAService.success();
     }
 
+    @GetMapping("successException")
+    public String successException(){
+        return businessAService.successException();
+    }
+
     @GetMapping("ignore")
     public String ignore(){
         return businessAService.ignore();
     }
 
-    @GetMapping("recover")
-    public String methodWithRecovery(){
-        return businessAService.methodWithRecovery().get();
+    @GetMapping("monoSuccess")
+    public Mono<String> monoSuccess(){
+        return businessAService.monoSuccess();
+    }
+
+    @GetMapping("monoFailure")
+    public Mono<String> monoFailure(){
+        return businessAService.monoFailure();
+    }
+
+    @GetMapping("fluxSuccess")
+    public Flux<String> fluxSuccess(){
+        return businessAService.fluxSuccess();
+    }
+
+    @GetMapping("futureFailure")
+    public CompletableFuture<String> futureFailure(){
+        return businessAService.futureFailure();
+    }
+
+    @GetMapping("futureSuccess")
+    public CompletableFuture<String> futureSuccess(){
+        return businessAService.futureSuccess();
+    }
+
+    @GetMapping("fluxFailure")
+    public Flux<String> fluxFailure(){
+        return businessAService.fluxFailure();
+    }
+
+    @GetMapping("fallback")
+    public String failureWithFallback(){
+        return businessAService.failureWithFallback();
     }
 }

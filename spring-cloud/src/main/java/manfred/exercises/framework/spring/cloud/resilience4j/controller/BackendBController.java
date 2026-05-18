@@ -5,10 +5,14 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
+
+import java.util.concurrent.CompletableFuture;
 
 /**
- * Backend B 的 REST 控制器（manfred resilience4j 包），演示编程式 CircuitBreaker 装饰的调用端点。
- * 通过 CircuitBreakerRegistry 动态获取熔断器实例并手动包装业务方法。
+ * Backend B 的 REST 控制器，演示基于 Retry 和 RateLimiter 注解的弹性调用端点。
+ * 支持同步、响应式（Mono/Flux）及 CompletableFuture 等多种调用方式。
  */
 @RestController
 @RequestMapping(value = "/backendB")
@@ -21,17 +25,57 @@ public class BackendBController {
     }
 
     @GetMapping("failure")
-    public String backendBFailure(){
+    public String failure(){
         return businessBService.failure();
     }
 
     @GetMapping("success")
-    public String backendBSuccess(){
+    public String success(){
         return businessBService.success();
+    }
+
+    @GetMapping("successException")
+    public String successException(){
+        return businessBService.successException();
     }
 
     @GetMapping("ignore")
     public String ignore(){
         return businessBService.ignore();
+    }
+
+    @GetMapping("monoSuccess")
+    public Mono<String> monoSuccess(){
+        return businessBService.monoSuccess();
+    }
+
+    @GetMapping("monoFailure")
+    public Mono<String> monoFailure(){
+        return businessBService.monoFailure();
+    }
+
+    @GetMapping("fluxSuccess")
+    public Flux<String> fluxSuccess(){
+        return businessBService.fluxSuccess();
+    }
+
+    @GetMapping("fluxFailure")
+    public Flux<String> fluxFailure(){
+        return businessBService.fluxFailure();
+    }
+
+    @GetMapping("futureFailure")
+    public CompletableFuture<String> futureFailure(){
+        return businessBService.futureFailure();
+    }
+
+    @GetMapping("futureSuccess")
+    public CompletableFuture<String> futureSuccess(){
+        return businessBService.futureSuccess();
+    }
+
+    @GetMapping("fallback")
+    public String failureWithFallback(){
+        return businessBService.failureWithFallback();
     }
 }

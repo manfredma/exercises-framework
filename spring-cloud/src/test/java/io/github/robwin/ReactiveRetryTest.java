@@ -1,4 +1,4 @@
-package io.github.robwin;
+package manfred.exercises.framework.spring.cloud.resilience4j;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

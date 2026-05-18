@@ -1,18 +1,35 @@
 package manfred.exercises.framework.spring.cloud.resilience4j.service;
 
 
-import io.vavr.control.Try;
+import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
+
+import java.util.concurrent.CompletableFuture;
 
 /**
- * 业务服务接口（manfred resilience4j 包），定义失败、成功、忽略异常及带恢复的操作契约。
- * 返回 Vavr Try 类型，演示函数式错误处理与 Resilience4j 的集成模式。
+ * 业务服务接口，定义多种调用方式下的成功/失败/降级操作契约。
+ * 支持同步、响应式（Mono/Flux）及异步（CompletableFuture）三类调用模式。
  */
 public interface BusinessService {
     String failure();
 
     String success();
 
+    String successException();
+
     String ignore();
 
-    Try<String> methodWithRecovery();
+    String failureWithFallback();
+
+    Flux<String> fluxFailure();
+
+    Mono<String> monoSuccess();
+
+    Mono<String> monoFailure();
+
+    Flux<String> fluxSuccess();
+
+    CompletableFuture<String> futureSuccess();
+
+    CompletableFuture<String> futureFailure();
 }

@@ -1,4 +1,4 @@
-package io.github.robwin.exception;
+package manfred.exercises.framework.spring.cloud.resilience4j.exception;
 
 import java.util.function.Predicate;
 

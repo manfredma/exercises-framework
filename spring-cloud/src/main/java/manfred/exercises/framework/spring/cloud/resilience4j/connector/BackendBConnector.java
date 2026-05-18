@@ -1,27 +1,47 @@
 package manfred.exercises.framework.spring.cloud.resilience4j.connector;
 
 
-import io.reactivex.Observable;
+import io.github.resilience4j.bulkhead.annotation.Bulkhead;
+import io.github.resilience4j.ratelimiter.annotation.RateLimiter;
+import io.github.resilience4j.retry.annotation.Retry;
 import manfred.exercises.framework.spring.cloud.resilience4j.exception.BusinessException;
+import io.vavr.control.Try;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
+import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.HttpServerErrorException;
+import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
+
+import java.io.IOException;
+import java.util.concurrent.CompletableFuture;
+
+import static io.github.resilience4j.bulkhead.annotation.Bulkhead.*;
 
 /**
- * Backend B 连接器实现（manfred resilience4j 包），未使用注解式熔断，由上层 Service 编程式装饰。
- * 演示将弹性策略置于服务层而非连接器层的架构风格。
+ * Backend B 的连接器实现，演示 Retry 与 RateLimiter 注解及 Bulkhead（线程池隔离）的组合使用。
+ * 通过 Vavr Try 实现故障恢复，展示函数式风格的降级处理。
  */
+@RateLimiter(name = "backendB")
+@Retry(name = "backendB")
 @Component(value = "backendBConnector")
 public class BackendBConnector implements Connector {
 
     @Override
+    @Bulkhead(name = "backendB")
     public String failure() {
         throw new HttpServerErrorException(HttpStatus.INTERNAL_SERVER_ERROR, "This is a remote exception");
     }
 
     @Override
+    @Bulkhead(name = "backendB")
     public String success() {
         return "Hello World from backend B";
+    }
+
+    @Override
+    public String successException() {
+        throw new HttpClientErrorException(HttpStatus.BAD_REQUEST, "This is a remote client exception");
     }
 
     @Override
@@ -30,7 +50,45 @@ public class BackendBConnector implements Connector {
     }
 
     @Override
-    public Observable<String> methodWhichReturnsAStream() {
-        return Observable.never();
+    @Bulkhead(name = "backendB")
+    public Flux<String> fluxFailure() {
+        return Flux.error(new IOException("BAM!"));
+    }
+
+    @Override
+    @Bulkhead(name = "backendB")
+    public Mono<String> monoSuccess() {
+        return Mono.just("Hello World from backend B");
+    }
+
+    @Override
+    @Bulkhead(name = "backendB")
+    public Mono<String> monoFailure() {
+        return Mono.error(new IOException("BAM!"));
+    }
+
+    @Override
+    @Bulkhead(name = "backendB")
+    public Flux<String> fluxSuccess() {
+        return Flux.just("Hello", "World");
+    }
+
+    @Override
+    @Bulkhead(name = "backendB", type = Type.THREADPOOL)
+    public CompletableFuture<String> futureSuccess() {
+        return CompletableFuture.completedFuture("Hello World from backend B");
+    }
+
+    @Override
+    @Bulkhead(name = "backendB", type = Type.THREADPOOL)
+    public CompletableFuture<String> futureFailure() {
+        CompletableFuture<String> future = new CompletableFuture<>();
+        future.completeExceptionally(new IOException("BAM!"));
+        return future;
+    }
+
+    @Override
+    public String failureWithFallback() {
+        return Try.ofSupplier(this::failure).recover(ex -> "Recovered").get();
     }
 }

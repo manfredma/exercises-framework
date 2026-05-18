@@ -1,7 +1,7 @@
-package io.github.robwin.service;
+package manfred.exercises.framework.spring.cloud.resilience4j.service;
 
 
-import io.github.robwin.connector.Connector;
+import manfred.exercises.framework.spring.cloud.resilience4j.connector.Connector;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;

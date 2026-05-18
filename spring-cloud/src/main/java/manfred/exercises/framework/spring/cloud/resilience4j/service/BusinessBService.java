@@ -3,66 +3,85 @@ package manfred.exercises.framework.spring.cloud.resilience4j.service;
 
 import io.github.resilience4j.circuitbreaker.CircuitBreaker;
 import io.github.resilience4j.circuitbreaker.CircuitBreakerRegistry;
-import io.github.resilience4j.circuitbreaker.operator.CircuitBreakerOperator;
-import io.reactivex.Observable;
-import io.vavr.control.Try;
+import io.github.resilience4j.reactor.circuitbreaker.operator.CircuitBreakerOperator;
 import manfred.exercises.framework.spring.cloud.resilience4j.connector.Connector;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
+import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
 
-import java.util.concurrent.TimeUnit;
-import java.util.function.Supplier;
+import java.util.concurrent.CompletableFuture;
 
 /**
- * Backend B 业务服务实现（manfred resilience4j 包），演示编程式 CircuitBreaker 装饰及 RxJava 流的熔断保护。
- * 通过 CircuitBreakerRegistry 动态获取熔断器，并结合 Vavr Try 实现链式故障恢复。
+ * Backend B 业务服务实现，以编程方式手动装饰 CircuitBreaker，并结合响应式流（Flux/Mono）操作。
+ * 演示 CircuitBreakerOperator 在 Reactor 管道中的使用方式。
  */
 @Service(value = "businessBService")
 public class BusinessBService implements BusinessService  {
 
     private final Connector backendBConnector;
-    private final CircuitBreakerRegistry circuitBreakerRegistry;
+    private final CircuitBreaker circuitBreaker;
 
     public BusinessBService(@Qualifier("backendBConnector") Connector backendBConnector,
                             CircuitBreakerRegistry circuitBreakerRegistry){
         this.backendBConnector = backendBConnector;
-        this.circuitBreakerRegistry = circuitBreakerRegistry;
-
+        circuitBreaker = circuitBreakerRegistry.circuitBreaker("backendB");
     }
 
     public String failure() {
-        CircuitBreaker circuitBreaker = circuitBreakerRegistry.circuitBreaker("backendB");
         return CircuitBreaker.decorateSupplier(circuitBreaker, backendBConnector::failure).get();
     }
 
     public String success() {
-        CircuitBreaker circuitBreaker = circuitBreakerRegistry.circuitBreaker("backendB");
         return CircuitBreaker.decorateSupplier(circuitBreaker, backendBConnector::success).get();
     }
 
     @Override
+    public String successException() {
+        return CircuitBreaker.decorateSupplier(circuitBreaker, backendBConnector::successException).get();
+    }
+
+    @Override
     public String ignore() {
-        CircuitBreaker circuitBreaker = circuitBreakerRegistry.circuitBreaker("backendB");
         return CircuitBreaker.decorateSupplier(circuitBreaker, backendBConnector::ignoreException).get();
     }
 
     @Override
-    public Try<String> methodWithRecovery() {
-        CircuitBreaker circuitBreaker = circuitBreakerRegistry.circuitBreaker("backendB");
-        Supplier<String> backendFunction = CircuitBreaker.decorateSupplier(circuitBreaker, () -> backendBConnector.failure());
-        return Try.ofSupplier(backendFunction)
-                .recover((throwable) -> recovery(throwable));
+    public Flux<String> fluxFailure() {
+        return backendBConnector.fluxFailure()
+                .transform(CircuitBreakerOperator.of(circuitBreaker));
     }
 
-    public Observable<String> methodWhichReturnsAStream() {
-        CircuitBreaker circuitBreaker = circuitBreakerRegistry.circuitBreaker("backendB");
-        return backendBConnector.methodWhichReturnsAStream()
-                .timeout(1, TimeUnit.SECONDS)
-                .compose(CircuitBreakerOperator.of(circuitBreaker));
+    @Override
+    public Mono<String> monoSuccess() {
+        return backendBConnector.monoSuccess()
+                .transform(CircuitBreakerOperator.of(circuitBreaker));
     }
 
-    private String recovery(Throwable throwable) {
-        // Handle exception and invoke fallback
-        return "Hello world from recovery";
+    @Override
+    public Mono<String> monoFailure() {
+        return backendBConnector.monoFailure()
+                .transform(CircuitBreakerOperator.of(circuitBreaker));
+    }
+
+    @Override
+    public Flux<String> fluxSuccess() {
+        return backendBConnector.fluxSuccess()
+                .transform(CircuitBreakerOperator.of(circuitBreaker));
+    }
+
+    @Override
+    public CompletableFuture<String> futureSuccess() {
+        return backendBConnector.futureSuccess();
+    }
+
+    @Override
+    public CompletableFuture<String> futureFailure() {
+        return backendBConnector.futureFailure();
+    }
+
+    @Override
+    public String failureWithFallback() {
+        return backendBConnector.failureWithFallback();
     }
 }

@@ -1,13 +1,16 @@
 package manfred.exercises.framework.spring.cloud.resilience4j.service;
 
-import io.vavr.control.Try;
 import manfred.exercises.framework.spring.cloud.resilience4j.connector.Connector;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
+import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
+
+import java.util.concurrent.CompletableFuture;
 
 /**
- * Backend A 业务服务实现（manfred resilience4j 包），演示注解式 CircuitBreaker 的透明集成。
- * 通过 Vavr Try 实现函数式故障恢复，展示不依赖 Spring AOP 的降级处理方式。
+ * Backend A 业务服务实现，将请求委托给 BackendAConnector。
+ * 演示注解式 CircuitBreaker、RateLimiter、Bulkhead 等弹性策略在服务层的透明集成。
  */
 @Service(value = "businessAService")
 public class BusinessAService implements BusinessService {
@@ -29,17 +32,47 @@ public class BusinessAService implements BusinessService {
     }
 
     @Override
+    public String successException() {
+        return backendAConnector.successException();
+    }
+
+    @Override
     public String ignore() {
         return backendAConnector.ignoreException();
     }
 
     @Override
-    public Try<String> methodWithRecovery() {
-        return Try.of(backendAConnector::failure)
-                .recover((throwable) -> recovery());
+    public Flux<String> fluxFailure() {
+        return backendAConnector.fluxFailure();
     }
 
-    private String recovery() {
-        return "Hello world from recovery";
+    @Override
+    public Mono<String> monoSuccess() {
+        return backendAConnector.monoSuccess();
+    }
+
+    @Override
+    public Mono<String> monoFailure() {
+        return backendAConnector.monoFailure();
+    }
+
+    @Override
+    public Flux<String> fluxSuccess() {
+        return backendAConnector.fluxSuccess();
+    }
+
+    @Override
+    public CompletableFuture<String> futureSuccess() {
+        return backendAConnector.futureSuccess();
+    }
+
+    @Override
+    public CompletableFuture<String> futureFailure() {
+        return backendAConnector.futureFailure();
+    }
+
+    @Override
+    public String failureWithFallback() {
+        return backendAConnector.failureWithFallback();
     }
 }
