@@ -1,4 +1,4 @@
-package com.example.springboot;
+package manfred.exercises.framework.spring.boot.hello.v2;
 
 import static org.assertj.core.api.Assertions.*;
 

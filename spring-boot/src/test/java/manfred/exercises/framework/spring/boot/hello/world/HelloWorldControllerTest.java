@@ -1,4 +1,4 @@
-package manfred.spring.boot.hello.world;
+package manfred.exercises.framework.spring.boot.hello.world;
 
 import org.junit.Before;
 import org.junit.Test;
