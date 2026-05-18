@@ -1,4 +1,4 @@
-package manfred.end;
+package manfred.end.model;
 
 /**
  * 员工实体类，用于 Spring Boot H2 数据库 CRUD 操作演示中的数据模型。

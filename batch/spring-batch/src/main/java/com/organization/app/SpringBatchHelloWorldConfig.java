@@ -16,6 +16,7 @@ import org.springframework.batch.item.file.transform.DelimitedLineTokenizer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.ClassPathResource;
+import com.organization.app.model.Employee;
 
 /**
  * Spring Batch 批处理配置类，演示从 CSV 文件读取员工数据、经过处理器转换后输出的完整 Job 流程。

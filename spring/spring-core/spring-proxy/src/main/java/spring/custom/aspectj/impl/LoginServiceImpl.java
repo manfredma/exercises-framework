@@ -1,4 +1,7 @@
-package spring.custom.aspectj;
+package spring.custom.aspectj.impl;
+
+import spring.custom.aspectj.LoginService;
+import spring.custom.aspectj.UseAop;
 
 /**
  * 登录服务实现类，login 方法使用 @UseAop 注解标记为 AOP 切点目标。

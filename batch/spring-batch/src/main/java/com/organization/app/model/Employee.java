@@ -1,4 +1,4 @@
-package com.organization.app;
+package com.organization.app.model;
 
 /**
  * 员工数据模型，用于 Spring Batch 批处理流程中 CSV 文件行到 Java 对象的映射。

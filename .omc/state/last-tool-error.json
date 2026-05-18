@@ -1,7 +1,0 @@
-{
-  "tool_name": "Bash",
-  "tool_input_preview": "{\"command\":\"find /Users/maxingfang/IdeaProjects/exercises/framework/spring -name \\\"pom.xml\\\" -not -path '*/target/*' | sort | xargs -I{} sh -c 'echo \\\"=== {} ===\\\" && cat {}'\",\"description\":\"查看所有 spri...",
-  "error": "Exit code 1\n=== /Users/maxingfang/IdeaProjects/exercises/framework/spring/pom.xml ===\n<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project xmlns=\"http://maven.apache.org/POM/4.0.0\"\n         xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\n         xsi:schemaLocation=\"http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd\">\n    <parent>\n        <artifactId>framework</artifactId>\n        <groupId>manfred.end</groupId>\n        <version>1.0-SNAPSHOT</version>\n    </parent>\n   ...",
-  "timestamp": "2026-05-17T07:07:01.083Z",
-  "retry_count": 1
-}

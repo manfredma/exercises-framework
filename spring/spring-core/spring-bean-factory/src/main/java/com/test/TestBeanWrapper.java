@@ -4,6 +4,7 @@ import org.springframework.beans.BeanWrapper;
 import org.springframework.beans.BeanWrapperImpl;
 
 import java.util.Arrays;
+import com.test.model.User;
 
 /**
  * BeanWrapper 使用演示类，展示 Spring BeanWrapperImpl 对普通 Java 对象的属性动态赋值能力。

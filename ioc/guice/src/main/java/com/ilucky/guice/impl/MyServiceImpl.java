@@ -1,4 +1,6 @@
-package com.ilucky.guice;
+package com.ilucky.guice.impl;
+
+import com.ilucky.guice.MyService;
 
 /**
  * MyService 接口的 Guice 注入实现类，接收并打印服务调用参数。

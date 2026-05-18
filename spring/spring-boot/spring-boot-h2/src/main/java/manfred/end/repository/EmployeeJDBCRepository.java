@@ -1,4 +1,4 @@
-package manfred.end;
+package manfred.end.repository;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -10,6 +10,7 @@ import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
+import manfred.end.model.Employee;
 
 /**
  * 员工 JDBC 数据访问层，使用 JdbcTemplate 实现增删改查及批量插入操作。

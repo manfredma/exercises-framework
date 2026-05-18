@@ -2,6 +2,7 @@ package com.ilucky.guice;
 
 import com.google.inject.Guice;
 import com.google.inject.Injector;
+import com.ilucky.guice.impl.MyServiceImpl;
 
 /**
  * v1.0:20161114

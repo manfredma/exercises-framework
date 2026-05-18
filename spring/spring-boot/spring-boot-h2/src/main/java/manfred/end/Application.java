@@ -10,6 +10,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import java.util.ArrayList;
 import java.util.List;
+import manfred.end.model.Employee;
+import manfred.end.repository.EmployeeJDBCRepository;
 
 
 /**
