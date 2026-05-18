@@ -1,4 +1,4 @@
-package io.github.robwin.connnector;
+package io.github.robwin.connector;
 
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;

@@ -1,7 +1,7 @@
 package io.github.robwin.service;
 
 
-import io.github.robwin.connnector.Connector;
+import io.github.robwin.connector.Connector;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;

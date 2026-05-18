@@ -1,4 +1,4 @@
-package io.github.robwin.connnector;
+package io.github.robwin.connector;
 
 
 import io.github.resilience4j.bulkhead.annotation.Bulkhead;
