@@ -3,7 +3,7 @@
     <Appenders>
         <Console name="Console" target="SYSTEM_OUT">
             <PatternLayout
-                    pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} %logger %X{transaction.owner} [%t] [%-5p]  %c{1.}  %C %F - %m%n"/>
+                    pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5p %c{1.} - %m%n"/>
         </Console>
     </Appenders>
     <Loggers>
@@ -11,7 +11,7 @@
             <AppenderRef ref="Console"/>
         </Logger>
 
-        <Root level="error" includeLocation="true">
+        <Root level="info" includeLocation="true">
             <AppenderRef ref="Console"/>
         </Root>
     </Loggers>

@@ -1,5 +1,5 @@
 org.springframework.boot.BootstrapRegistryInitializer=\
- manfred.exercises.framework.spring.boot.config.MyBootstrapper
+ manfred.exercises.framework.spring.boot.config.boot.MyBootstrapper
 org.springframework.boot.env.EnvironmentPostProcessor=\
   manfred.exercises.framework.spring.boot.config.boot.MyEnvironmentPostProcessor
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\

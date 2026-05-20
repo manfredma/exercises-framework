@@ -1,6 +1,5 @@
-package manfred.exercises.framework.spring.boot.config;
+package manfred.exercises.framework.spring.boot.config.boot;
 
-import manfred.exercises.framework.spring.boot.config.boot.BootstrapBean;
 import org.springframework.boot.BootstrapRegistry;
 import org.springframework.boot.BootstrapRegistryInitializer;
 
@@ -12,7 +11,6 @@ public class MyBootstrapper implements BootstrapRegistryInitializer {
     @Override
     public void initialize(BootstrapRegistry registry) {
         registry.register(BootstrapBean.class, context -> new BootstrapBean());
-        System.out.println("我执行了~~~~");
-        new RuntimeException().printStackTrace(System.out);
+        BootstrapBean.boot = 200;
     }
 }

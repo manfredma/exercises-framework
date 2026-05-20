@@ -12,8 +12,10 @@ public class BootstrapBean {
     private static final Logger LOGGER = getLogger(BootstrapBean.class);
 
     static {
-        System.out.println("加载俺老孙干啥！");
+        System.out.println("BootstrapBean: 加载俺老孙干啥！");
     }
+
+    public static int boot = 100;
 
     public void sayHello() {
         System.out.println("sayHello！");

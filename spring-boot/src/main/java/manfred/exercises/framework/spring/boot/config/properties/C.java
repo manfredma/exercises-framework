@@ -1,4 +1,4 @@
-package manfred.exercises.framework.spring.boot.config;
+package manfred.exercises.framework.spring.boot.config.properties;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
