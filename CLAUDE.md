@@ -12,9 +12,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ```
 exercises-framework/
 ├── pom.xml             ← 根 POM，Spring Boot 2.7.18 BOM 统一管理依赖版本
-├── spring-core/        ← Spring Core（IoC/AOP/代理）
-├── spring-boot/        ← Spring Boot（Web/配置/H2/自定义 Starter）
-├── spring-cloud/       ← Spring Cloud（Hystrix + Resilience4j）
+├── spring-core/        ← Spring Core（IoC/Bean/代理：JDK/CGLIB/AspectJ/硬编码）
+├── spring-boot/        ← Spring Boot（hello/config/h2/web-tomcat/web-jetty/starter）
+├── spring-cloud/       ← Spring Cloud（Hystrix + Resilience4j 熔断/重试）
 ├── messaging-kafka/    ← Kafka 消息队列
 ├── stability/          ← 稳定性组件（Hystrix/Sentinel/Resilience4j）
 ├── workflow/           ← 工作流引擎（EasyFlows/EasyRules/EasyStates）
@@ -61,7 +61,7 @@ mvn clean test -pl stability -Dtest=HystrixTest -Dsort.skip=true
 
 - 包名格式：`manfred.exercises.framework.<domain>.<topic>`
 - 演示类命名：`XxxDemo`（有 main 方法的演示入口）
-- 不在 `src/main/java` 中使用 `@Test` 注解
+- 不在 `src/main/java` 中使用 `@Test` 注解（例外：spring-cloud/resilience4j 的测试类暂留在 main 目录，因依赖 Spring 上下文需随应用启动）
 - 所有 public 类必须有中文类级 Javadoc
 - 无 `@author`/`@date` 等元数据注释
 - 子模块 pom 不写 `<version>`，版本统一在根 pom 管理
@@ -73,7 +73,10 @@ xxx/              ← Demo 类（有 main 方法，演示入口）
 xxx.model/        ← 模型/数据类
 xxx.config/       ← 配置类
 xxx.service/      ← 服务类
+xxx.repository/   ← 数据访问类
 xxx.handler/      ← 处理器类
+xxx.controller/   ← 控制器类
+xxx.connector/    ← 连接器/适配器类
 xxx.impl/         ← 接口实现类
 ```
 
