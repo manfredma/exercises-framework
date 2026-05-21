@@ -14,3 +14,10 @@ logging:
   config: classpath:log4j2.xml
 
 d: application
+
+rgyb:
+  greeting:
+    enable: true
+    members:
+      - 李雷
+      - 韩梅梅
