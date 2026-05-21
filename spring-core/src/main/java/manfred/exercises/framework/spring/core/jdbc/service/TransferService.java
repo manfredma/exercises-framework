@@ -1,7 +1,7 @@
 package manfred.exercises.framework.spring.core.jdbc.service;
 
-import javax.annotation.Resource;
 import manfred.exercises.framework.spring.core.jdbc.model.Account;
+import org.springframework.beans.factory.annotation.Autowired;
 import manfred.exercises.framework.spring.core.jdbc.repository.AccountRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -13,7 +13,7 @@ import org.springframework.transaction.annotation.Transactional;
 @Service
 public class TransferService {
 
-    @Resource
+    @Autowired
     private AccountRepository accountRepository;
 
     /**
