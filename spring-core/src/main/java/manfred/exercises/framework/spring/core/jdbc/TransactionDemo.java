@@ -29,15 +29,17 @@ public class TransactionDemo {
         System.out.println("转账后余额：");
         repo.findAll().forEach(System.out::println);
 
-        // 场景 2：余额不足，回滚
-        System.out.println("\n=== 场景 2：Charlie -> Alice 转账 500（余额不足），期望回滚 ===");
+        // 场景 2：先增加收款方，再减少付款方，最后抛异常 → 两步均回滚
+        System.out.println("\n=== 场景 2：Charlie -> Alice 转账 100，先写收款方再写付款方，最后抛异常，期望两步均回滚 ===");
+        System.out.println("操作前 Charlie 余额：" + repo.findById(3).getBalance()
+                + "，Alice 余额：" + repo.findById(1).getBalance());
         try {
-            service.transfer(3, 1, 500.00);
+            service.transferWrongOrder(3, 1, 100.00);
         } catch (RuntimeException e) {
             System.out.println("  捕获异常：" + e.getMessage());
         }
-        System.out.println("回滚后余额（应与上一步相同）：");
-        repo.findAll().forEach(System.out::println);
+        System.out.println("回滚后 Charlie 余额（应与操作前相同）：" + repo.findById(3).getBalance());
+        System.out.println("回滚后 Alice 余额（应与操作前相同）：" + repo.findById(1).getBalance());
 
         // 场景 3：扣减后强制抛异常，验证回滚
         System.out.println("\n=== 场景 3：Bob -> Charlie 转账 100，扣减后强制异常，期望回滚 ===");
