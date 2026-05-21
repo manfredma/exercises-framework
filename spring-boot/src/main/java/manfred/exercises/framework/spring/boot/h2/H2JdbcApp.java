@@ -20,7 +20,7 @@ import manfred.exercises.framework.spring.boot.h2.repository.EmployeeJDBCReposit
  * 演示 Spring Boot 自动配置 H2 数据源及 JdbcTemplate 进行增删改查和批量插入的使用方式。
  */
 @SpringBootApplication
-public class Application implements CommandLineRunner {
+public class H2JdbcApp implements CommandLineRunner {
 
     private final Logger LOGGER = LoggerFactory.getLogger(this.getClass());
 
@@ -49,7 +49,7 @@ public class Application implements CommandLineRunner {
     }
 
     public static void main(String[] args) {
-        SpringApplication app = new SpringApplication(Application.class);
+        SpringApplication app = new SpringApplication(H2JdbcApp.class);
         app.setWebApplicationType(WebApplicationType.NONE);
         app.run(args);
     }

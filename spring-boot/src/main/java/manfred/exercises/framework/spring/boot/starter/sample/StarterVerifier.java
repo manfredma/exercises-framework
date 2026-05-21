@@ -11,10 +11,9 @@ import javax.annotation.Resource;
  * 演示自定义 Starter 注入的 GreetingService Bean 在 Spring 容器中正常工作的完整验证流程。
  */
 @Component
-public class Test implements InitializingBean {
+public class StarterVerifier implements InitializingBean {
     @Resource
     private GreetingService greetingService;
-
 
     @Override
     public void afterPropertiesSet() throws Exception {

@@ -19,7 +19,7 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
  * 演示 @ControllerAdvice 统一处理 MethodArgumentNotValidException，返回包含时间戳和错误列表的结构化响应。
  */
 @ControllerAdvice
-public class ExceptionHandler extends ResponseEntityExceptionHandler {
+public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
 
     @Override
     protected ResponseEntity<Object> handleMethodArgumentNotValid(
@@ -31,7 +31,6 @@ public class ExceptionHandler extends ResponseEntityExceptionHandler {
         objectBody.put("Current Timestamp", new Date());
         objectBody.put("Status", httpStatus.value());
 
-        // Get all errors
         List<String> exceptionalErrors = exception.getBindingResult()
                 .getFieldErrors()
                 .stream()

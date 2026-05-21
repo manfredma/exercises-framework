@@ -9,10 +9,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * 通过 @SpringBootApplication 一键开启自动配置、组件扫描和配置类支持。
  */
 @SpringBootApplication
-public class Application {
+public class HelloWorldApp {
 
     public static void main(String[] args) {
-        SpringApplication.run(Application.class, args);
+        SpringApplication.run(HelloWorldApp.class, args);
     }
 
 }

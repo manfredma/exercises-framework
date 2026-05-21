@@ -12,7 +12,7 @@ import java.util.Arrays;
  * 演示 @Configuration 与 @Bean 声明及 ApplicationContext 的 Bean 枚举能力。
  */
 @Configuration
-public class CustomerConfig {
+public class BeanPrinterConfig {
 
 
     @Bean(name = "c2")

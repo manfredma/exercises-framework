@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
  * 演示多层级属性键（如 c.c2）和简单属性键的 @Value 注入方式。
  */
 @Component
-public class C {
+public class CValueProperties {
 
     @Value("${c}")
     private int c1;
@@ -36,7 +36,7 @@ public class C {
 
     @Override
     public String toString() {
-        return "C{" +
+        return "CValueProperties{" +
                 "c1=" + c1 +
                 ", c2='" + c2 + '\'' +
                 ", d='" + d + '\'' +

@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Configuration;
  */
 @ConfigurationProperties(prefix = "b")
 @Configuration
-public class B {
+public class BConfigProperties {
     private int b;
 
     public int getB() {
@@ -23,7 +23,7 @@ public class B {
 
     @Override
     public String toString() {
-        return "B{" +
+        return "BConfigProperties{" +
                 "b=" + b +
                 '}';
     }

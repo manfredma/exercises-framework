@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
  */
 @ConfigurationProperties(prefix = "a")
 @Component
-public class A {
+public class AConfigProperties {
 
     private String a;
 
@@ -24,7 +24,7 @@ public class A {
 
     @Override
     public String toString() {
-        return "A{" +
+        return "AConfigProperties{" +
                 "a='" + a + '\'' +
                 '}';
     }
