@@ -8,11 +8,11 @@
     <context:property-placeholder location="classpath:xxx.properties"/>
     <context:annotation-config/>
 
-    <bean id="testBean" class="manfred.exercises.framework.spring.core.bean.TestBean"/>
-    <bean id="a" class="manfred.exercises.framework.spring.core.bean.A">
+    <bean id="beanFactoryDemo" class="manfred.exercises.framework.spring.core.bean.BeanFactoryDemo"/>
+    <bean id="a" class="manfred.exercises.framework.spring.core.bean.CircularDepBeanA">
         <property name="b" ref="b"/>
     </bean>
-    <bean id="b" class="manfred.exercises.framework.spring.core.bean.B">
+    <bean id="b" class="manfred.exercises.framework.spring.core.bean.CircularDepBeanB">
         <property name="a" ref="a"/>
     </bean>
 
