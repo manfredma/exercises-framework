@@ -1,9 +1,8 @@
-package manfred.exercises.framework.spring.core.proxy.jdk;
+package manfred.exercises.framework.spring.core.proxy;
 
 import manfred.exercises.framework.spring.core.proxy.dao.IUserDao;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-
 
 /**
  * Spring JDK 动态代理演示入口，通过 Spring XML 配置加载基于 JDK 反射代理的 AOP Bean。

@@ -9,10 +9,10 @@
     <context:annotation-config/>
 
     <bean id="beanFactoryDemo" class="manfred.exercises.framework.spring.core.bean.BeanFactoryDemo"/>
-    <bean id="a" class="manfred.exercises.framework.spring.core.bean.CircularDepBeanA">
+    <bean id="a" class="manfred.exercises.framework.spring.core.bean.circular.CircularDepBeanA">
         <property name="b" ref="b"/>
     </bean>
-    <bean id="b" class="manfred.exercises.framework.spring.core.bean.CircularDepBeanB">
+    <bean id="b" class="manfred.exercises.framework.spring.core.bean.circular.CircularDepBeanB">
         <property name="a" ref="a"/>
     </bean>
 

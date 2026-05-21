@@ -1,4 +1,4 @@
-package manfred.exercises.framework.spring.core.customtag;
+package manfred.exercises.framework.spring.core.customtag.impl;
 
 import org.springframework.beans.factory.support.BeanDefinitionBuilder;
 import org.springframework.beans.factory.xml.AbstractSimpleBeanDefinitionParser;
@@ -28,7 +28,6 @@ public class CarBeanDefinitionParser extends AbstractSimpleBeanDefinitionParser 
         }
         builder.addPropertyValue("price", price);
         builder.addPropertyValue("maxSpeed", maxSpeed);
-
     }
 
     @Override

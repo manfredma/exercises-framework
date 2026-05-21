@@ -1,4 +1,4 @@
-package manfred.exercises.framework.spring.core.bean;
+package manfred.exercises.framework.spring.core.bean.circular;
 
 /**
  * Spring Bean 循环依赖演示类 B，持有对 CircularDepBeanA 的引用并在构造和 setter 中打印调用栈。

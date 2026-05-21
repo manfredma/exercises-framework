@@ -1,7 +1,8 @@
-package manfred.exercises.framework.spring.core.proxy.jdk.basic;
+package manfred.exercises.framework.spring.core.proxy;
 
 import manfred.exercises.framework.spring.core.proxy.dao.IUserDao;
 import manfred.exercises.framework.spring.core.proxy.dao.UserDao;
+import manfred.exercises.framework.spring.core.proxy.jdk.ProxyFactory;
 
 /**
  * JDK 动态代理演示入口，通过 ProxyFactory 在运行时为 IUserDao 接口生成代理对象。

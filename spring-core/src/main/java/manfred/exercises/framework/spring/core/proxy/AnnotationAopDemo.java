@@ -1,8 +1,8 @@
-package manfred.exercises.framework.spring.core.proxy.aspectj;
+package manfred.exercises.framework.spring.core.proxy;
 
+import manfred.exercises.framework.spring.core.proxy.aspectj.LoginService;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-
 
 /**
  * Spring AOP 自定义注解驱动演示入口，加载 XML 配置并触发带 @LoginLog 注解方法的切面拦截。

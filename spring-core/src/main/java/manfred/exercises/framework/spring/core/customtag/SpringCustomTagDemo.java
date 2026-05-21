@@ -1,5 +1,6 @@
 package manfred.exercises.framework.spring.core.customtag;
 
+import manfred.exercises.framework.spring.core.customtag.impl.Car;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 

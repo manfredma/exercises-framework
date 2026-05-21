@@ -1,4 +1,4 @@
-package manfred.exercises.framework.spring.core.customtag;
+package manfred.exercises.framework.spring.core.customtag.impl;
 
 import org.springframework.beans.factory.xml.NamespaceHandlerSupport;
 

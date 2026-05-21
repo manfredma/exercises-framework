@@ -1,5 +1,7 @@
 package manfred.exercises.framework.spring.core.bean;
 
+import manfred.exercises.framework.spring.core.bean.circular.CircularDepBeanA;
+import manfred.exercises.framework.spring.core.bean.circular.CircularDepBeanB;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.support.ClassPathXmlApplicationContext;

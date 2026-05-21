@@ -1,9 +1,8 @@
-package manfred.exercises.framework.spring.core.proxy.cglib;
+package manfred.exercises.framework.spring.core.proxy;
 
 import manfred.exercises.framework.spring.core.proxy.dao.IUserDao;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-
 
 /**
  * Spring CGLIB 代理演示入口，通过 Spring ApplicationContext 加载基于 CGLIB 的 AOP 代理 Bean。

@@ -1,4 +1,4 @@
-package manfred.exercises.framework.spring.core.proxy.cglib.basic;
+package manfred.exercises.framework.spring.core.proxy.cglib;
 
 import net.sf.cglib.proxy.Enhancer;
 import net.sf.cglib.proxy.MethodInterceptor;
@@ -12,21 +12,16 @@ import java.lang.reflect.Method;
  */
 public class ProxyFactory implements MethodInterceptor {
     Class clazz;
+
     public ProxyFactory(Class clazz) {
         this.clazz = clazz;
     }
 
-    //给目标对象创建一个代理对象
     public Object getProxyInstance() {
-        //1.工具类
         Enhancer en = new Enhancer();
-        //2.设置父类
         en.setSuperclass(clazz);
-        //3.设置回调函数
         en.setCallback(this);
-        //4.创建子类(代理对象)
         return en.create();
-
     }
 
     @Override

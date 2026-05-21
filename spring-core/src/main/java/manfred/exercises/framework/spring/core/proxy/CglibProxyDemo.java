@@ -1,8 +1,8 @@
-package manfred.exercises.framework.spring.core.proxy.cglib.basic;
+package manfred.exercises.framework.spring.core.proxy;
 
+import manfred.exercises.framework.spring.core.proxy.cglib.ProxyFactory;
 import manfred.exercises.framework.spring.core.proxy.dao.IUserDao;
 import manfred.exercises.framework.spring.core.proxy.dao.UserDao;
-
 
 /**
  * CGLIB 动态代理演示入口，通过 ProxyFactory 在运行时为 UserDao 类生成子类代理。
