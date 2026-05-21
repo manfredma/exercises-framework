@@ -5,6 +5,9 @@ spring:
   output:
     ansi:
       enabled: NEVER
+  sql:
+    init:
+      schema-locations: classpath:db/schema.sql
 c: 111
 
 logging:

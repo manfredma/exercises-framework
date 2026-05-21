@@ -5,5 +5,5 @@ target/
 .idea/
 *.iml
 .DS_Store
-.omc/sessions/
-.omc/state/
+.omc/
+.claude/
